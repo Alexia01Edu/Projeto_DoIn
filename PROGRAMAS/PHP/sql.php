@@ -9,9 +9,13 @@ function insert (string $entidade, array $dados) : string
     //www.php.net/manual/pt_BR/function.implode.php
 
     $campos = implode(', ', array_keys($dados));
-    //array_keys: Retorna um array de todas as chaves em um array. ex: www.php.net/manual/pt_BR/function.array-keys.php
+    //função implode() retorna uma string dos elementos de um array.
+    //www.w3schools.com/php/func_string_implode.asp
+    //array_keys: Retorna um array de todas as chaves em um array. 
+    //ex: www.php.net/manual/pt_BR/function.array-keys.php
 
     $valores = implode(', ', array_values($dados));
+    //função implode() retorna uma string dos elementos de um array.
     //array_values: Retorna todos os valores do array num array indexado 'indice' numericamente. 
     //www.php.net/manual/pt_BR/function.array-values.php
 
@@ -43,10 +47,22 @@ function update(string $entidade, array $dados, array $criterio = []): string
     //$set[] é um arraY que utiliza o valor da variavel $campo como chave, para o valor da variavel $dado, que mudam a cada iteração;
     $instrucao .= ' SET ' . implode(', ', $set);
     //O SET comando é usado com UPDATE para especificar quais COLUNAS e VALORES devem ser atualizados em uma tabela.
-    //
+    //concatenado com o implode: Que retorna uma string dos elementos do array, e os junta com uma outra string ', ' separando eles.
+    //O array é o: $set.
+    //www.w3schools.com/sql/sql_ref_set.asp
     if(!empty($criterio)) {
-        $instrucao .= ' WHERE ';
+    //celke.com.br/artigo/como-usar-funcao-empty-e-isset-no-php
+    // empty serve para saber se uma variável é vazia. 
+    //A função empty retornará true (verdadeiro) quando uma variável for vazia 
+    //e false (falso) quando uma variável não for vazia.
+    //A adição de ! - ponto de exclamação no inicio, significa que a variavel tem que ser DIFERENTE de vazio;
+    //Logo ela retornara true (verdadeiro) quando uma variável estiver preenchida 
+    //e false (falso) quando uma variável for vazia.
+    //só entrara nessa condição se a variavel estiver preenchida;
 
+        $instrucao .= ' WHERE ';
+    // 
+     
         foreach($criterio as $expressao) {
             $instrucao .= ' '. implode(' ', $expressao);
         }

@@ -12,7 +12,7 @@ function insert (string $entidade, array $dados) : string
     //array_keys: Retorna um array de todas as chaves em um array. ex: www.php.net/manual/pt_BR/function.array-keys.php
 
     $valores = implode(', ', array_values($dados));
-    //array_values: Retorna todos os valores do array num array indexado ='indice' numericamente. 
+    //array_values: Retorna todos os valores do array num array indexado 'indice' numericamente. 
     //www.php.net/manual/pt_BR/function.array-values.php
 
     $instrucao .= "({$campos})";
@@ -30,7 +30,7 @@ function insert (string $entidade, array $dados) : string
 function update(string $entidade, array $dados, array $criterio = []): string
 {
     $instrucao = "UPDATE {$entidade}";
-    //atalizar dados da tabela, contida na variavel $entidade;
+    //UPDATE: Atuliza dados da tabela $entidade
     foreach($dados as $campo => $dado){
         $set[] = "{$campo} = {$dado}";
     }
@@ -40,9 +40,10 @@ function update(string $entidade, array $dados, array $criterio = []): string
     //para cada iteração do laço de repetição, o valor do elemento atual $dados da Array é atribuído ao valor $dado. 
     //enquanto percorremos o array, vamos também estar pegando o valor da sua chave $campo.
     //<?php  foreach ($array as $key => $value) {#codigo}>
-    //$set[] é um arraY que utiliza os valores do array $campo como chave, para os valor da variavel $dado, que muda a cada iteração;
+    //$set[] é um arraY que utiliza o valor da variavel $campo como chave, para o valor da variavel $dado, que mudam a cada iteração;
     $instrucao .= ' SET ' . implode(', ', $set);
-
+    //O SET comando é usado com UPDATE para especificar quais COLUNAS e VALORES devem ser atualizados em uma tabela.
+    //
     if(!empty($criterio)) {
         $instrucao .= ' WHERE ';
 

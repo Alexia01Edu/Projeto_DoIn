@@ -136,7 +136,7 @@ function select(string $entidade, array $campos, array $criterio = [], string $o
 {
     $instrucao = "SELECT " . implode(', ', $campos);
     //SELECT: seleciona o/os campos
-    //mostra os valores dos campos
+    //mostra os valores contidos nos campos
     $instrucao .= " FROM {$entidade}";
     //FROM = Da: tabela $entidade
     if(!empty($criterio)) {

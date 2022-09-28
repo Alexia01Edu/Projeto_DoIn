@@ -68,9 +68,12 @@
                         -->
                         <input type="hidden" name="id"
                                 value="<?php echo $entidade['id'] ?? '' ?>">
-                        <!--
-                        //echo $entidade['id'] ?? ''
-                        //pegar o id na tabela entidade no caso de atualizar dados (update) 
+                         <!--
+                        //echo empty($id) ? 'insert' : 'update'
+                        //  ?? operador null coalescing é parecido a expressão if.
+                        //se o usuario estiver logado então buscar o id na tabela $entidade;
+                        //se não então deixar vazio
+                        // se o id estiver vazio então inserir dados (insert), se não então atualizar dados (update) 
                         -->
                         <div class="form-group">
                             <label for="nome">Nome</label>

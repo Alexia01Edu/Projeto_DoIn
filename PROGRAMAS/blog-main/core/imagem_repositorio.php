@@ -34,10 +34,15 @@ switch($acao){
             'Imagem_arq' => $Imagem_arq,
             'dataImg' => $dataImg,
             'descricaoImg' => $descricaoImg,
-            'imagem_name' => $modoOperacao,
+            'imagem_name' => $imagem_name,
             //'data_postagem' => "$data_postagem $hora_postagem",
         ];
-
+        if($error){
+            die("falha ao enviar arquivo");
+            }
+            if($size > 2097152){
+                die('arquivo muito grande!! Max: 2MB');
+            }
         insere(
             'Imagem',
             $dados

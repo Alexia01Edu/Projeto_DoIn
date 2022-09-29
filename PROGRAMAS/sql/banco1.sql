@@ -1,7 +1,7 @@
 
 -- Drop banco de dados
 --drop database DoIn;
-
+--
 -- Criação do banco de dados
 create database DoIn;
 

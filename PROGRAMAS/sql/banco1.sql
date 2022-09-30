@@ -14,6 +14,7 @@ create table usuario (
     nome 		        varchar(100)	not null,
     email	            varchar(30)		not null,
     senha 		        varchar(100)	not null,
+    genero              varchar(20)     not null,
     cpf 		        varchar(100)	not null,
     dataNasc 		    date	        not null,
     telefone	        int		        not null,

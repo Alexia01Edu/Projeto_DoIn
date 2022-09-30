@@ -21,7 +21,8 @@
             'email' => $email,
             'senha' => crypt($senha,$salt),
            //senha fica cripytografada
-            'cpf' => $cpf,
+            'genero'=> $genero,
+            'cpf' => crypt($cpf,$salt),
             'dataNasc' => $dataNasc,
             'quantDoar' => 0,
             'quantTrocar' =>0

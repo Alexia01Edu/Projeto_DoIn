@@ -71,17 +71,17 @@
                         <tbody>
                             <?php 
                                 foreach($result as $entidade) :
-                                    $instrucao = "SELECT * from usuario";
-                                    $conexao = conecta();
-                                    $stmt = mysqli_prepare($conexao, $instrucao);
-                                    mysqli_stmt_execute($stmt);
-                                    mysqli_stmt_store_result($stmt);
-                                    $num = mysqli_stmt_num_rows($stmt);
-                                    for($posição=1;$posição <= $num;$posição++) :
+                                    //$instrucao = "SELECT * from usuario";
+                                    //$conexao = conecta();
+                                    //$stmt = mysqli_prepare($conexao, $instrucao);
+                                    //mysqli_stmt_execute($stmt);
+                                    //mysqli_stmt_store_result($stmt);
+                                    //$num = mysqli_stmt_num_rows($stmt);
+                                    //for($posicao=1;$posicao <= $num;$posicao++) :
                                        
                             ?>
                             <tr>
-                                <td><?php  echo $posição?><td>
+                                <td><?php  $posicao=0; echo $posicao;  $posicao++;?><td>
                                 <td><?php echo $entidade['nome'] ?></td>
                                 <td><?php echo $entidade['ranking']?></td>
                             </tr>

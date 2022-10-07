@@ -1,0 +1,12 @@
+'email',
+'genero',
+'cpf',
+'dataNasc',
+'telefone',
+'quantDoar',
+'quantTrocar',
+'email', 'senha',   'genero', 'cpf', 'dataNasc', 'telefone', 'quantDoar', 'quantTrocar',
+include 'includes/valida_login.php';
+if(isset($_SESSION['login'])) {
+    header('Location: index.php');
+}

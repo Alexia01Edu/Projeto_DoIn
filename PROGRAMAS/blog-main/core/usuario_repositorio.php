@@ -63,7 +63,7 @@
 
          $retorno = buscar(
              'usuario',
-             ['id', 'nome', 'email', 'senha', 'adm'],
+             ['usuarioID', 'nome','ranking'],
              $criterio
          );
          //a função buscar, verifica na tabela usuario se aquele usuario existe;

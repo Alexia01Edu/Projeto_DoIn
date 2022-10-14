@@ -20,7 +20,6 @@ create table usuario (
     telefone	        int		        not null,
     quantDoar           int             not null,
     quantTrocar         int             not null,
-    ranking          int             not null,
     primary key (usuarioID)
     );
     

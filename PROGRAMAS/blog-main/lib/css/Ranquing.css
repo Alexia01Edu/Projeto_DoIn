@@ -1,0 +1,16 @@
+/*menu*/
+.menu 
+{width: 27%;float:left; 
+background-color: black;
+padding: 18px; 
+border-bottom: 1px solid blue;}
+.menu a{float: left; margin-right: 5%; }
+.menu a:hover{color: azure;}
+.link{
+    border: 1px; 
+    border-color: aqua;
+}
+
+.display {
+    display: none;
+}

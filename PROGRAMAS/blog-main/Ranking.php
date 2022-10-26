@@ -8,35 +8,34 @@
         <link rel="stylesheet" href="lib/css/Ranquing.css">
     </head>
     <body>
-    
+    <script type="text/javascript" src="lib/js/Ranqing.js"></script>
     <div >
         
     </div>
         
     <nav>
         <div class="menu">
-            <div class="link"><a href="#nav-doa">DOAÇÃO</a></div>
-            <div class="link"><a href="#nav-troca" >TROCA</a></div>
-            <div class="link"><a href="#nav-ambos">DOAÇÃO E TROCA</a></div>
+           <button id="doa" onclick="document.getElementById('div1').style.display = 'block'">DOAÇÃO</button>
+            <button id="troca" onclick="document.getElementById('div2').style.display = 'block'">TROCA</button>
+            <button id="ambos" onclick="document.getElementById('div3').style.display = 'block'">DOAÇÃO E TROCA</button>
         </div>
     </nav>
-        <div class="" id="">
-            <div class="conteudo" id="nav-doa">
+        <div class="tabelas" id="">
+            <div class="conteudo" id="div1">
                 <?php
                     include 'includes/tabelaDoar.php';
                  ?>
             </div>
-            <div class="conteudo" id="nav-troca" >
+            <div class="conteudo" id="div2" >
                 <?php
                     include 'includes/tabelaTrocar.php';
                 ?>
             </div>
-            <div class="conteudo" id="nav-ambos" >
+            <div class="conteudo" id="div3" >
                 <?php
                     include 'includes/tabelaTrocaDoa.php';
                 ?>
             </div>
         </div>
-    <script src="lib/js/Ranqing.js"></script>
     </body>
 </html>

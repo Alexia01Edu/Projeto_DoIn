@@ -1,7 +1,4 @@
-var div = document.getElementsByClassName('conteudo');
-var linkA = document.getElementsByClassName('link');
+var link = document.getElementById('#doa');
 
 
-link.addEventListener('click', function () {
-    div.classList.toggle('display');
-});
+

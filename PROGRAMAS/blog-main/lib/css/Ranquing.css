@@ -22,10 +22,12 @@ border-bottom: 1px solid blue;
 
   table, th, td {
     border: 1px solid black;
+    
 }
   th, td {
-    padding: 15px;
+    padding: 12px;
     text-align: left;
+    background-color: #FFFAF0	;
 }
 .conteudo{
  display: none;

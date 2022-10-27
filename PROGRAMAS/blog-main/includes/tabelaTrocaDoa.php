@@ -24,11 +24,11 @@
                                 'usuarioID',
                                 'nome',
                                 'quantDoar',
-                                'quantTrocar'
+                                'quantTrocar',
+                                '(quantDoar+quantTrocar) as total'
                             ],
                             $criterio,
-                            'select (quantDoar+quantTrocar) as total from usuario;
-                            total DESC'
+                            'total DESC'
                         );
                     ?>
                     <table class="table table-houver table-bordered 
@@ -55,8 +55,7 @@
                                 <td><?php echo $entidade['nome'] ?></td>
                                 <td style="text-align: center"><?php echo $entidade['quantDoar']?></td>
                                 <td style="text-align: center"><?php echo $entidade['quantTrocar']?></td>
-                                <?php $total = 'select (quantDoar+quantTrocar) as total from usuario;'?>
-                                <td style="text-align: center"><?php echo $total?></td>
+                                <td style="text-align: center"><?php echo $entidade['total']?></td>
                             </tr>
                             <?php endforeach; ?>
 

@@ -5,19 +5,32 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuários | Projeto para Web com PHP</title>
+        <script>function doacao(){
+        document.getElementById('div1').style.display = 'block'
+        document.getElementById('div2').style.display = 'none'
+        document.getElementById('div3').style.display = 'none'
+        }
+        function trocas(){
+        document.getElementById('div2').style.display = 'block'
+        document.getElementById('div1').style.display = 'none'
+        document.getElementById('div3').style.display = 'none'
+        }
+        function ambos(){
+        document.getElementById('div3').style.display = 'block'
+        document.getElementById('div1').style.display = 'none'
+        document.getElementById('div2').style.display = 'none'
+}</script>
         <link rel="stylesheet" href="lib/css/Ranquing.css">
     </head>
     <body>
-    <script type="text/javascript" src="lib/js/Ranqing.js"></script>
-    <div >
-        
-    </div>
+   
+    <div></div>
         
     <nav>
         <div class="menu">
-           <button id="doa" onclick="document.getElementById('div1').style.display = 'block'">DOAÇÃO</button>
-            <button id="troca" onclick="document.getElementById('div2').style.display = 'block'">TROCA</button>
-            <button id="ambos" onclick="document.getElementById('div3').style.display = 'block'">DOAÇÃO E TROCA</button>
+           <button id="doa" onclick="doacao()">DOAÇÃO</button>
+            <button id="troca" onclick="trocas()">TROCA</button>
+            <button id="ambos" onclick="ambos()">DOAÇÃO E TROCA</button>
         </div>
     </nav>
         <div class="tabelas" id="">
@@ -37,5 +50,6 @@
                 ?>
             </div>
         </div>
+        <script src="lib/js/ranqing.js"></script>
     </body>
 </html>

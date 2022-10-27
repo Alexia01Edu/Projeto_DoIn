@@ -138,7 +138,7 @@ function select(string $entidade, array $campos, array $criterio = [], string $o
     //SELECT: seleciona o/os campos
     //mostra os valores contidos nos campos
     $instrucao .= " FROM {$entidade}";
-    //FROM = Da: tabela $entidade
+    //FROM = Da -> tabela $entidade
     if(!empty($criterio)) {
         //se a variavel $criterio não estiver vazia
         $instrucao .= ' WHERE ';

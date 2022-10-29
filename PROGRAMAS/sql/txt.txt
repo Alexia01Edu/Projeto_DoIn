@@ -13,4 +13,8 @@ if(isset($_SESSION['login'])) {
 
 delete from blog.usuario where id=2;
 delete from blog.post where id=4;
-INSERT INTO blog.post(titulo, texto, usuario_id, data_postagem) VALUES('Como fazer pão de mel?', 'compre pão de mel, pois os ingredientes estão caros', 1, '2020-02-23 11:12:36');
+INSERT INTO blog.post(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade) 
+VALUES('assim', 'Cachorrinho', 8, 'Troca','2020-02-23 11:12:36', 'SP', 'Birigui');
+
+INSERT INTO blog.post(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade) 
+VALUES('desse jeito', 'Gato', 3, 'Doaçao','2020-02-23 11:12:36', 'RJ', 'Rio Janeiro');

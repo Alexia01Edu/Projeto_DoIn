@@ -1,0 +1,8 @@
+.card{
+ 
+}
+@media(max-width:  768px) {
+    #propagandas{
+       display:none; 
+    }
+}

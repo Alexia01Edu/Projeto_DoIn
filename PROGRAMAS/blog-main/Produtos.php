@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuário | Projeto para Web com PHP</title>
-        <link rel="stylesheet"
-            href="lib/css/Produtos.css">
+        <link rel="stylesheet" href="lib/css/Produtos.php">
     </head>
-    <body>
+    <body>  
+            <div class="prop"></div>
             <div id="main" >
                     <?php
                         require_once 'includes/funcoes.php';
@@ -26,19 +26,10 @@
                             $criterio[] = ['nome', 'like', "%{$busca}%"];
                         }
 
-                        $imagens = buscar(
-                            'Imagem',
-                            [
-                                'imagemID',
-                                'descricaoImg',
-                                'Imagem_arq'
-                            ],
-                            $criterio,
-                            ' DESC'
-                        );
+                       
 
                         $result = buscar(
-                            'Produtos',
+                            'Produto',
                             [
                                 'produtoID',
                                 'descricao',
@@ -55,12 +46,13 @@
                     
                       foreach($result as $entidade) : ?>
 
-                <div class="card-prod" >
-                    <h2><?php echo $entidade['modoOperacao']?></h2>
+                <div class="card" >
+                    <h2 class="titulo-card"><?php echo $entidade['modoOperacao']?></h2>
                     <img src="" alt="">
                     <div>
-                        <h3><?php echo $entidade['nome_prod']?></h3>
-                        <p><?php echo $entidade['cidade']?>, <?php echo $entidade['estado']?></p>
+                        <h3 class="nome-Prod"><?php echo $entidade['nome_prod']?></h3>
+                        <p class="data-Vali">Data de validade: <?php echo $entidade['dataValidade']?>;</p></br>
+                        <p class="lugar"><?php echo $entidade['cidade']?>, <?php echo $entidade['estado']?></p>
                     </div>
                 </div>
                 <?php endforeach; ?>

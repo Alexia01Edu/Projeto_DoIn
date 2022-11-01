@@ -43,17 +43,23 @@
                             $criterio,
                             'dataValidade ASC'
                         );
-                    
+                    //https://html-css-js.com/css/generator/box-shadow/
                       foreach($result as $entidade) : ?>
 
                 <div class="card" >
+                    <a href="" class="link efeitos">
+
                     <h2 class="titulo-card"><?php echo $entidade['modoOperacao']?></h2>
+                    
                     <img src="" alt="">
                     <div>
-                        <h3 class="nome-Prod"><?php echo $entidade['nome_prod']?></h3>
-                        <p class="data-Vali">Data de validade: <?php echo $entidade['dataValidade']?>;</p></br>
+                        <h3><?php echo $entidade['nome_prod']?></h3>
+                        <div class="info">
+                        <span class="data">Data de validade: <?php echo $entidade['dataValidade']?>;</span>
                         <p class="lugar"><?php echo $entidade['cidade']?>, <?php echo $entidade['estado']?></p>
+                        </div>
                     </div>
+                    </a>
                 </div>
                 <?php endforeach; ?>
             </div>

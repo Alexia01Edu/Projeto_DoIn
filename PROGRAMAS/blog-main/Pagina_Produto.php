@@ -1,3 +1,7 @@
+
+
+pegar o id do produto quando clicar nele;
+
 $imagens = buscar(
     'Imagem',
         [

@@ -59,13 +59,18 @@ if (isset($_FILES['imagens'])){
 </head> 
 <body> 
     <form method = "post" action ="" enctype="multipart/form-data"> 
+
         <label for="imagem">Imagem: </label> 
+    
         <input multiple="multiple" type="file" name="imagens[]">
+
         <label for="titulo">Descrição para as imagens</label>
+
         <textarea type="text" require="required" id="descricaoImg" name="descricaoImg" 
                 placeholder="essa imagem mostra os filhotes de cachorros labrador que eu quero Doar/Trocar"
                 value= "<?php echo $entidade['descricaoImg'] ?? '' ?>" rows="5"> </textarea>
-                <label for="imagem_name">Nome da Imagem</label>
+
+        <label for="imagem_name">Nome da Imagem</label>
         <input type="text" id="imagem_name" name="imagem_name" value="<?php echo $entidade['imagem_name'] ?? '' ?>">
         <input type="submit" value="Submit">
 </form>

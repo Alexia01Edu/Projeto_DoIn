@@ -30,6 +30,24 @@ switch($acao){
     case 'insert':
         //caso seja para inserir novo dados
         //função sql.php
+        if($error){
+            die("falha ao enviar arquivo");
+            }
+            if($size > 2097152)
+                die('arquivo muito grande!! Max: 2MB');
+            
+            $pasta = '..imagens/';
+            $nomeImagem = $name;
+            $novoNomeImagem = uniqid();
+            $extensao = strtolower(pathinfo($nomeImagem, PATHINFO_EXTENSION));
+            
+            if($extensao != 'jpg' && $extensao != 'jpeg' && $extensao != 'png')
+                die("Tipo de arquivo não aceito");
+            
+            
+            $Imagem_arq = $pasta . $novoNomeImagem. "." . $extensao;
+        
+
         $dados = [
             'Imagem_arq' => $Imagem_arq,
             'dataImg' => $dataImg,
@@ -37,12 +55,7 @@ switch($acao){
             'imagem_name' => $imagem_name,
             //'data_postagem' => "$data_postagem $hora_postagem",
         ];
-        if($error){
-            die("falha ao enviar arquivo");
-            }
-            if($size > 2097152){
-                die('arquivo muito grande!! Max: 2MB');
-            }
+    
         insere(
             'Imagem',
             $dados

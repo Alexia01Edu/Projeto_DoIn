@@ -52,7 +52,9 @@ create table usuario (
     dataImg 		    datetime not null default current_timestamp,
     descricaoImg	    varchar(30)		null,
     imagem_name         varchar(100)    not null,
-    primary key (imagemID)
+    fk_produto 		    int         	not null,
+    primary key (imagemID),
+    foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade
     );
     
 
@@ -79,10 +81,11 @@ create table usuario (
     foreign key (fk_usuario2) references usuario (usuarioID) on delete cascade on update cascade
     );
     
-    create table possui (
+    /*create table possui (
 	fk_imagem			int 		    not null,
     fk_produto 		    int         	not null,
     primary key (fk_imagem, fk_produto),
     foreign key (fk_imagem) references Imagem (imagemID) on delete cascade on update cascade,
     foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade
     );
+*/

@@ -24,7 +24,7 @@ delete from blog.post where id=4;
                     $criterio,
                      ''
                     );
-                    create database DoIn;
+create database DoIn;
 
 -- selecionar banco de dados
 use DoIn;

@@ -1,3 +1,7 @@
+<?php
+ function Produto(){
+    
+ }?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuário | Projeto para Web com PHP</title>
         <link rel="stylesheet" href="lib/css/Produtos.php">
+        <script>
+
+</script>
     </head>
     <body>  
             <div class="prop"></div>
@@ -45,10 +52,11 @@
                         );
                     //https://html-css-js.com/css/generator/box-shadow/
                       foreach($result as $entidade) : ?>
-
+                
                 <div class="card" >
-                    <a href="" class="link efeitos">
-
+                    <a href="" class="link efeitos" onclick="<form  method='POST' action='Pagina_Produto.php'>
+    <input type='hidden' name='array' value='<?php echo $entidade; ?>' ></form>">
+                        
                     <h2 class="titulo-card"><?php echo $entidade['modoOperacao']?></h2>
                     
                     <img src="" alt="">

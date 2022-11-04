@@ -1,7 +1,6 @@
 <?php
- function Produto(){
-    
- }?>
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,11 +50,11 @@
                             'dataValidade ASC'
                         );
                     //https://html-css-js.com/css/generator/box-shadow/
-                      foreach($result as $entidade) : ?>
+                      foreach($result as $entidade) : 
+                      ;?>
                 
                 <div class="card" >
-                    <a href="" class="link efeitos" onclick="<form  method='POST' action='Pagina_Produto.php'>
-    <input type='hidden' name='array' value='<?php echo $entidade; ?>' ></form>">
+                    <a href="Pagina_Produto.php" class="link efeitos" onclick='$_SESSION["idproduto"] = $entidade["produtoID"]'>
                         
                     <h2 class="titulo-card"><?php echo $entidade['modoOperacao']?></h2>
                     

@@ -51,10 +51,11 @@ session_start();
                         );
                     //https://html-css-js.com/css/generator/box-shadow/
                       foreach($result as $entidade) : 
-                      ;?>
+                      
+                    $_SESSION["idproduto"] = $entidade['produtoID'];?>
                 
                 <div class="card" >
-                    <a href="Pagina_Produto.php" class="link efeitos" onclick='$_SESSION["idproduto"] = $entidade["produtoID"]'>
+                    <a href="Pagina_Produto.php" class="link efeitos" onclick="">
                         
                     <h2 class="titulo-card"><?php echo $entidade['modoOperacao']?></h2>
                     

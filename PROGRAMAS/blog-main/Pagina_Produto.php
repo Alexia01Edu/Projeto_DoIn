@@ -60,7 +60,8 @@ session_start();
                             'where produtoID = $_SESSION["idproduto"]'
                         );*/
                     //https://html-css-js.com/css/generator/box-shadow/
-                    echo $_SESSION["idproduto"];?>
+                    $id = $_GET['id'];
+                    echo $id;?>
                 
                 <div class="card" >
                     <a href="" class="link efeitos">

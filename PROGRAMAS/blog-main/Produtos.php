@@ -32,7 +32,7 @@ session_start();
                             $criterio[] = ['nome', 'like', "%{$busca}%"];
                         }
 
-                       
+                        
 
                         $result = buscar(
                             'Produto',
@@ -51,11 +51,11 @@ session_start();
                         );
                     //https://html-css-js.com/css/generator/box-shadow/
                       foreach($result as $entidade) : 
-                      
-                    $_SESSION["idproduto"] = $entidade['produtoID'];?>
+     
+                    ?>
                 
                 <div class="card" >
-                    <a href="Pagina_Produto.php" class="link efeitos" onclick="">
+                    <a href="Pagina_Produto.php?id=<?php echo $entidade['produtoID'] ?>" class="link efeitos">
                         
                     <h2 class="titulo-card"><?php echo $entidade['modoOperacao']?></h2>
                     
@@ -63,7 +63,7 @@ session_start();
                     <div>
                         <h3><?php echo $entidade['nome_prod']?></h3>
                         <div class="info">
-                        <span class="data">Data de validade: <?php echo $entidade['dataValidade']?>;</span>
+                        <span class="data">Data de validade: <?php echo $entidade['dataValidade']?></span>
                         <p class="lugar"><?php echo $entidade['cidade']?>, <?php echo $entidade['estado']?></p>
                         </div>
                     </div>

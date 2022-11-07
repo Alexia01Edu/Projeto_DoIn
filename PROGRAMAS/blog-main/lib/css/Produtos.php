@@ -1,4 +1,5 @@
 <?php header("Content-type: text/css");?>
+
 body{
     padding: 0%;
     margin: 0%;
@@ -20,11 +21,11 @@ body{
 
 .card{
 
-    width: 13vw;
-    height: 25vh;
+    width: 23%;
+    height: 40%;
     font-family: Tahoma, Geneva, sans-serif;
     display:inline-block;
-    margin: 1em;
+    margin: 10px;
     font-size:50%;
     -webkit-box-shadow: 0px 4px 14px -2px rgba(0,0,0,0.71); 
     box-shadow: 0px 4px 14px -2px rgba(0,0,0,0.71);
@@ -96,6 +97,34 @@ p{
         width:100vw;
     }
 }
+@media (max-width: 575.98px) { 
+    div.card{
+        width: 45%;
+        height: 55%;
+    }
+ }
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    div.card{
+        width: 200px;
+        height: 50%;
+        margin: 6px;
+    }
+ }
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    
+ }
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    
+ }
+
+@media (min-width: 1200px) { 
+    
+ }
+
+
 
 
 

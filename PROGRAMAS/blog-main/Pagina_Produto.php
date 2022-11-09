@@ -26,13 +26,13 @@ session_start();
                             $$indice = limparDados($dado);
                         }
 
-                        $criterio = [];
+                        
+                        $id = $_GET['id'];
+                        
+                        echo $id;
 
-                        if(!empty($busca)) {
-                            $criterio[] = ['nome', 'like', "%{$busca}%"];
-                        }
-
-                       /* $imagens = buscar(
+                        $criterioimagens[] = ['fk_produto', '=', $id];
+                        $imagens = buscar(
                             'Imagem',
                                 [
                                     'imagemID',
@@ -40,11 +40,10 @@ session_start();
                                     'Imagem_arq',
                                     'fk_produto'
                                 ],
-                                $criterio,
-                                'where fk_produto = $_SESSION["idproduto"]'
+                                $criterioimagens
                                 );
-
-                        $result = buscar(
+                        $criterioproduto[] = ['id', '=', $id];
+                        $produto = buscar(
                             'Produto',
                             [
                                 'produtoID',
@@ -56,12 +55,10 @@ session_start();
                                 'estado',
                                 'cidade'
                             ],
-                            $criterio,
-                            'where produtoID = $_SESSION["idproduto"]'
-                        );*/
+                            $criterioproduto
+                        );
                     //https://html-css-js.com/css/generator/box-shadow/
-                    $id = $_GET['id'];
-                    echo $id;?>
+                    ?>
                 
                 <div class="card" >
                     <a href="" class="link efeitos">

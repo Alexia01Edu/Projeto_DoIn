@@ -38,6 +38,7 @@ switch($acao){
             'dataValidade' => $dataValidade,
             'estado' => $estado,
             'cidade' => $cidade,
+            'fk_categoria' => $fk_categoria,
             //'data_postagem' => "$data_postagem $hora_postagem",
             'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuarioID']
         ];

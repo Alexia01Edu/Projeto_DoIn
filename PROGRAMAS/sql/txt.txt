@@ -24,37 +24,14 @@ delete from blog.post where id=4;
                     $criterio,
                      ''
                     );
-create database DoIn;
-
--- selecionar banco de dados
-use DoIn;
-
--- Criação da tabela usuario
-
-    create table Produto (
-	produtoID			int 		    not null auto_increment,
-    descricao 		    varchar(100)	not null,
-    nome_prod	        varchar(30)		not null,
-    quant 		        int         	not null,
-    modoOperacao        varchar(10)     not null,
-    dataValidade        date            not null,
-    estado 		        varchar(100)	not null,
-    cidade              varchar(100)    not null,
-    primary key (produtoID)
-    );
-
-
-    create table Imagem (
-	imagemID			int 		    not null auto_increment,
-    Imagem_arq          varchar(255)    not null,
-    dataImg 		    datetime not null default current_timestamp,
-    descricaoImg	    varchar(30)		null,
-    imagem_name         varchar(100)    not null,
-    primary key (imagemID)
-    );
+INSERT INTO categoria(categoriaID, nome) values(1,'Pet Animais');
+INSERT INTO categoria(categoriaID, nome) values(2,'Pet Produtos');
+INSERT INTO categoria(categoriaID, nome) values(3,'Móveis');
+INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone)
+VALUES('ze', 'z@gmail.com', 123, 'feminino','62636391304','2020-02-23', '(12) 99176-5162');   
     
-INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade) 
-VALUES('assim', 'Cachorrinho', 8, 'Troca','2020-02-23', 'SP', 'Birigui');
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_usuario) 
+VALUES('assim', 'Cachorrinho', 8, 'Troca','2020-02-23', 'SP', 'Birigui', '1');
 
-INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade) 
-VALUES('desse jeito', 'Gato', 3, 'Doaçao','2020-02-23', 'RJ', 'Rio Janeiro');
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_usuario) 
+VALUES('desse jeito', 'Gato', 3, 'Doaçao','2020-02-23', 'RJ', 'Rio Janeiro', '1');

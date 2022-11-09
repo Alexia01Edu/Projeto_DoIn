@@ -24,8 +24,7 @@
             'genero'=> $genero,
             'cpf' => crypt($cpf,$salt),
             'dataNasc' => $dataNasc,
-            'quantDoar' => 0,
-            'quantTrocar' =>0
+            'telefone' => $telefone,
          ];
 
          insere(

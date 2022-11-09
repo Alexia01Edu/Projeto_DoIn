@@ -17,9 +17,9 @@ create table usuario (
     genero              varchar(20)     not null,
     cpf 		        varchar(100)	not null,
     dataNasc 		    date	        not null,
-    telefone	        int		        not null,
-    quantDoar           int             not null,
-    quantTrocar         int             not null,
+    telefone	        varchar(25)		not null,
+    quantDoar           int             not null default '0',
+    quantTrocar         int             not null default '0',
     primary key (usuarioID)
     );
     

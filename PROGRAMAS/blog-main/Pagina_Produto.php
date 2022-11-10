@@ -8,7 +8,7 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuário | Projeto para Web com PHP</title>
-        <link rel="stylesheet" href="lib/css/Produtos.php">
+        <link rel="stylesheet" href="">
         <script>
 
 </script>
@@ -16,7 +16,7 @@ session_start();
     <body>  
             <div class="prop"></div>
             <div id="main" >
-                    <?php
+                    <?php /*
                         require_once 'includes/funcoes.php';
                         require_once 'core/conexao_mysql.php';
                         require_once 'core/sql.php';
@@ -27,10 +27,8 @@ session_start();
                         }
 
                         
-                        $id = $_GET['id'];
-                        
+                        $id = (int) $_GET['id'];
                         echo $id;
-
                         $criterioimagens[] = ['fk_produto', '=', $id];
                         $imagens = buscar(
                             'Imagem',
@@ -42,40 +40,48 @@ session_start();
                                 ],
                                 $criterioimagens
                                 );
+
                         $criterioproduto[] = ['id', '=', $id];
+                        
                         $produto = buscar(
                             'Produto',
-                            [
-                                'produtoID',
-                                'descricao',
-                                'nome_prod',
-                                'quant',
-                                'modoOperacao',
-                                'dataValidade',
-                                'estado',
-                                'cidade'
-                            ],
+                            ['*'],
                             $criterioproduto
                         );
                     //https://html-css-js.com/css/generator/box-shadow/
-                    ?>
+                    */?>
                 
-                <div class="card" >
-                    <a href="" class="link efeitos">
+    <div class="card" >
                         
-                    <h2 class="titulo-card"><?php echo $entidade['modoOperacao']?></h2>
-                    
-                    <img src="" alt="">
-                    <div>
-                        <h3><?php echo $entidade['nome_prod']?></h3>
-                        <div class="info">
-                        <span class="data">Data de validade: <?php echo $entidade['dataValidade']?>;</span>
-                        <p class="lugar"><?php echo $entidade['cidade']?>, <?php echo $entidade['estado']?></p>
-                        </div>
+    <h2 class="Transação">troca/doação</h2>
+        <div class="imagens">               
+        <img src="" alt="">
+        </div>              
+            <div>
+                <h3>nome do produto</h3>
+                    <div class="info">
+                        <h2>Detalhes do produto</h2>
+                        <table>
+                            <tr>
+                                <td>Categoria: </td>
+                                <td>Data de validade: </td>
+                                <td>Quantidade:</td>
+                                <td>Local: </td>
+                            </tr>
+                            <tr>
+                                <td>Ted</td>
+                                <td>22</td>
+                                <td>Estudante</td>
+                            </tr>
+                        </table>
                     </div>
-                    </a>
-                </div>
             </div>
+    </div>
+    <div>
+        
+        <h2>Descrição do produto</h2>
+    </div>
+</div>
     </body>
 </html>
 

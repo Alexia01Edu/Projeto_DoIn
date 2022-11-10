@@ -24,14 +24,18 @@ delete from blog.post where id=4;
                     $criterio,
                      ''
                     );
-INSERT INTO categoria(categoriaID, nome) values(1,'Pet Animais');
-INSERT INTO categoria(categoriaID, nome) values(2,'Pet Produtos');
-INSERT INTO categoria(categoriaID, nome) values(3,'Móveis');
+INSERT INTO categoria(categoriaID, nome) 
+values
+(1,'Beleza'),(2,'Saúde'),(3,'Casa'),(4,'Eletrodomésticos'),
+(5,'Móveis'),(6,'Decoração'),(7,'Alimentos'),(8,'Bebidas'),
+(9,'Esporte'),(10,'Lazer'),(11,'Eletrônicos'),(12,'Pet Animais'),
+(13, 'Pet Produtos');
+
 INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone)
 VALUES('ze', 'z@gmail.com', 123, 'feminino','62636391304','2020-02-23', '(12) 99176-5162');   
     
-INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_usuario) 
-VALUES('assim', 'Cachorrinho', 8, 'Troca','2020-02-23', 'SP', 'Birigui', '1');
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
+VALUES('assim', 'Cachorrinho', 8, 'Troca','2020-02-23', 'SP', 'Birigui', 1, 1);
 
-INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_usuario) 
-VALUES('desse jeito', 'Gato', 3, 'Doaçao','2020-02-23', 'RJ', 'Rio Janeiro', '1');
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
+VALUES('desse jeito', 'Gato', 3, 'Doaçao','2020-02-23', 'RJ', 'Rio Janeiro', 1, 1);

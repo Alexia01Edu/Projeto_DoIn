@@ -289,7 +289,7 @@ function deleta(string $entidade, array $criterio = []) : bool
     
             $nome_campo = (count($expressao) < 4) ? $expressao[0] : $expressao[1];
 
-            if(isset($nome_campo)) {
+            if(isset($$nome_campo)) {
                 $nome_campo = $nome_campo . '_' . rand();
             }
     
@@ -315,9 +315,9 @@ function deleta(string $entidade, array $criterio = []) : bool
         mysqli_stmt_execute($stmt);
 
      if($result = mysqli_stmt_get_result($stmt)){
-         //armazena recebe:
-         //A função PHP mysqli_stmt_get_result() retorna um conjunto de resultados se a instrução executada for SELECT e se for bem-sucedida. 
-         //Em outros cenários esta função retorna FALSE.
+         /*armazena recebe:
+         A função PHP mysqli_stmt_get_result() retorna um conjunto de resultados se a instrução executada for SELECT e se for bem-sucedida. 
+         Em outros cenários esta função retorna FALSE.*/
 
         $retorno = mysqli_fetch_all($result, MYSQLI_ASSOC);
         //Busque todas as linhas e retorne o conjunto de resultados como uma matriz associativa:
@@ -326,7 +326,7 @@ function deleta(string $entidade, array $criterio = []) : bool
         mysqli_free_result($result);
         //Libera a memória associada ao resultado
      }
-        $_SESSION ['errors'] = mysqli_stmt_error_list($stmt);
+        $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
     
         mysqli_stmt_close($stmt);
     

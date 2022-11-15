@@ -8,13 +8,12 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuário | Projeto para Web com PHP</title>
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="lib/css/PaginaProd.css">
         <script>
 
 </script>
     </head>
     <body>  
-            <div class="prop"></div>
             <div id="main" >
                     <?php /*
                         require_once 'includes/funcoes.php';
@@ -50,38 +49,37 @@ session_start();
                         );
                     //https://html-css-js.com/css/generator/box-shadow/
                     */?>
-                
-    <div class="card" >
-                        
-    <h2 class="Transação">troca/doação</h2>
+    <div class="p1">
+    <h2 class="transacao">troca/doação</h2>     
+    <div class="card" > 
         <div class="imagens">               
-        <img src="" alt="">
-        </div>              
-            <div>
+        <img src="" alt=""> 
+        </div>            
+        <div id="infoProd">
                 <h3>nome do produto</h3>
-                    <div class="info">
-                        <h2>Detalhes do produto</h2>
+                        <h4>Detalhes do produto</h4>
                         <table>
                             <tr>
-                                <td>Categoria: </td>
-                                <td>Data de validade: </td>
-                                <td>Quantidade:</td>
-                                <td>Local: </td>
+                                <th>Categoria: </th>
+                                <td>Ted</td>
                             </tr>
                             <tr>
-                                <td>Ted</td>
-                                <td>22</td>
+                                <th>Data de validade:</th>
+                                <td>12/30/3409</td>
+                            </tr>
+                            <tr>
+                                <th>Quantidade:</th>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <th>Local: </th>
                                 <td>Estudante</td>
                             </tr>
                         </table>
-                    </div>
-            </div>
+                </div>
+           </div>
+        </div> 
     </div>
-    <div>
-        
-        <h2>Descrição do produto</h2>
-    </div>
-</div>
     </body>
 </html>
 

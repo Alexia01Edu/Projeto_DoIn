@@ -10,10 +10,17 @@ body{
     width:80vw;
     height:700px;
 }
+#nome{
+    font-family: Roboto, sans-serif;
+    height: 3%;
+    font-weight: 500;
+    width: 85%;
+    font-size: 28px;
+}
 .card{
     border: 3px solid black;
-    height: 90%;
-    width: 90%;
+    height: 87%;
+    width: 85%;
     display: flex;
     
 }
@@ -27,20 +34,21 @@ body{
     margin-top: 1%;
     margin-left: 1%;
     border: 3px solid black;
-    width:55%;
-    height:80%;
+    width:65%;
+    height:90%;
     background-color: aliceblue;
     display: flex;
 }
 #infoProd{
-    background-color: black;
-    width: 40%;
+    width: 30%;
     height:80%;
     border: 3px solid black;
+    margin-left: 2%;
+    margin-top: 2%;
+    font-size: 20px;
 }
 table{
     text-align: justify;
-    font-size: 3%;
 }
 
 td{

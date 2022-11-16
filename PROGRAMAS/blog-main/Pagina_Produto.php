@@ -50,13 +50,13 @@ session_start();
                     //https://html-css-js.com/css/generator/box-shadow/
                     */?>
     <div class="p1">
+    <h3 id="nome">nome do produto</h3>
     <h2 class="transacao">troca/doação</h2>     
     <div class="card" > 
         <div class="imagens">               
         <img src="" alt=""> 
         </div>            
         <div id="infoProd">
-                <h3>nome do produto</h3>
                         <h4>Detalhes do produto</h4>
                         <table>
                             <tr>

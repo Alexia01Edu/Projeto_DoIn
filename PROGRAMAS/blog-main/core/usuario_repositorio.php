@@ -22,7 +22,7 @@
             'senha' => crypt($senha,$salt),
            //senha fica cripytografada
             'genero'=> $genero,
-            'cpf' => crypt($cpf,$salt),
+            'cpf' => $cpf,
             'dataNasc' => $dataNasc,
             'telefone' => $telefone,
          ];
@@ -54,15 +54,14 @@
      case 'login':
         //se input name='login' então 
          $criterio = [
-             ['email', '=', $email],
-             ['AND', 'ativo', '=', 1]
+             ['email', '=', $email]            
          ];
-         //armazena o email na tabela usuario no campo email
-         //E coloca ativo igual a 1 na tabela do banco de dados
+         //comapa se o email na digitado é igual ao email na tabela sql
+         //E compara se ativo igual a 1 na tabela do banco de dados
 
          $retorno = buscar(
              'usuario',
-             ['usuarioID', 'nome','ranking'],
+             ['usuarioID', 'nome','email','senha'],
              $criterio
          );
          //a função buscar, verifica na tabela usuario se aquele usuario existe;

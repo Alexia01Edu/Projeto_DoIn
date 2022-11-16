@@ -45,7 +45,7 @@
                     </div>
                     <div class="input-box">
                         <label for="cpf">CPF</label>
-                        <input id="cpf" type="text" name="number" placeholder="xxx.xxx.xxx-x" required>
+                        <input id="cpf" type="text" name="cpf" placeholder="xxx.xxx.xxx-x" required>
                     </div>
                     <div class="input-box">
                         <label for="tel">Celular</label>
@@ -78,17 +78,17 @@
 
                     <div class="gender-group">
                         <div class="gender-input">
-                            <input id="Feminino" type="radio" name="genero">
+                            <input id="Feminino" type="radio" name="genero" value="Feminino">
                             <label for="Feminino">Feminino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="Masculino" type="radio" name="genero">
+                            <input id="Masculino" type="radio" name="genero" value="Masculino">
                             <label for="Masculino">Masculino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="Outros" type="radio" name="genero">
+                            <input id="Outros" type="radio" name="genero" value="Outros">
                             <label for="Outros">Outros</label>
                         </div>
 

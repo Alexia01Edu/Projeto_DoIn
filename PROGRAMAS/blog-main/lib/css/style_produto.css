@@ -25,7 +25,7 @@ body {
     display: flex;
     justify-content: center;
 }
-
+/* começa aqui*/
 .login-button {
     margin-left: 5%;
     display: flex;
@@ -35,7 +35,7 @@ body {
 .login-button button {
     border: none;
     background-color: #6c63ff;
-    padding: 0.4rem 1rem;
+    padding: 20% 40%;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -46,10 +46,9 @@ body {
 
 .login-button button a {
     text-decoration: none;
-    font-weight: 500;
     color: #fff;
 }
-
+/*acaba aqui*/
 .form-header h1::after {
     content: '';
     display: block;
@@ -186,10 +185,8 @@ body {
     background-color: #6b63fff1;
 }
 
-.continue-button button a {
+.continue-button button a{
     text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
     color: #fff;
 }
 
@@ -200,9 +197,6 @@ body {
     }
     #posicao{
         width: 80%;
-    }
-    .input-group {
-        overflow-y: scroll;
     }
     .form {
         width: 100%;
@@ -224,22 +218,17 @@ body {
     .input-group {
         flex-direction: column;
         z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
+        padding-right: 10%;
         flex-wrap: nowrap;
     }
     .gender-inputs {
-        margin-top: 4%;
+        margin-top: 2%;
     }
     .gender-group {
         flex-direction: column;
     }
     .gender-title h6 {
         margin: 0;
-    }
-    .gender-input {
-        margin-top: 0.5rem;
     }
     .continue-button button {
         width: 100%;

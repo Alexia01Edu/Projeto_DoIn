@@ -40,7 +40,7 @@ switch($acao){
             'cidade' => $cidade,
             'fk_categoria' => $fk_categoria,
             //'data_postagem' => "$data_postagem $hora_postagem",
-            'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuarioID']
+            'fk_usuario' => $_SESSION ['login'] ['usuario'] ['usuarioID']
         ];
 
         insere(

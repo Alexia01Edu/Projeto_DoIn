@@ -17,6 +17,7 @@ create table usuario (
     genero              varchar(20)     not null,
     cpf 		        varchar(100)	not null,
     dataNasc 		    date	        not null,
+    dataCriacao         datetime        not null default current_timestamp,
     telefone	        varchar(25)		not null,
     quantDoar           int             not null default '0',
     quantTrocar         int             not null default '0',
@@ -49,7 +50,7 @@ create table usuario (
     create table Imagem (
 	imagemID			int 		    not null auto_increment,
     Imagem_arq          varchar(255)    not null,
-    dataImg 		    datetime not null default current_timestamp,
+    dataImg 		    datetime        not null default current_timestamp,
     descricaoImg	    varchar(30)		null,
     imagem_name         varchar(100)    not null,
     fk_produto 		    int         	not null,

@@ -18,6 +18,8 @@
                 <a href="Pagina_Produto.php">Pagina Produto</a>
                 <br>
                 <a href="Produtos.php">Produto</a>
+                <br>
+                <a href="Ranking.php">Ranking</a>
         
     </div>
     </body>

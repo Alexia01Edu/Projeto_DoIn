@@ -36,17 +36,17 @@
         <div class="tabelas" id="">
             <div class="conteudo" id="div1">
                 <?php
-                    include 'includes/tabelaDoar.php';
+                    include 'includes/Tabelas_ranking/tabelaDoar.php';
                  ?>
             </div>
             <div class="conteudo" id="div2" >
                 <?php
-                    include 'includes/tabelaTrocar.php';
+                    include 'includes/Tabelas_ranking/tabelaTrocar.php';
                 ?>
             </div>
             <div class="conteudo" id="div3" >
                 <?php
-                    include 'includes/tabelaTrocaDoa.php';
+                    include 'includes/Tabelas_ranking/tabelaTrocaDoa.php';
                 ?>
             </div>
         </div>

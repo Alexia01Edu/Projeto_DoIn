@@ -52,12 +52,17 @@ session_start();
     <div class="card" > 
         <div class="imagens">               
         <img src="" alt=""> 
-            </div>            
+        </div> 
+        <div>
+            <ul>
+                <li></li>
+            </ul>
+        </div>           
                 <div id="infoProd">
 
                     <strong class="transacao">Troca, doacao</strong><br>
                                 
-                        <a href="Produtos.php?categoria=<?php echo $Produto['fk_categoria']?>"></a>
+                        <a href="Produtos.php?categoria=<?php echo $Produto['fk_categoria']?>">categoria</a><br>
                        
                         <span> Data de validade: <strong>12/30/3409</strong></span>
                                
@@ -76,9 +81,7 @@ session_start();
         </div> 
         <div class="descricao">
             <h1>Descrição do Produto</h1>
-            
-           
-
+                <div>A descrição é a enumeração das características próprias dos seres, coisas, cenários, ambientes, costumes, impressões etc. A visão, o tato, a audição, o olfato e o paladar constituem a base da descrição.</div>
         </div>
     </div>
     </body>

@@ -14,6 +14,7 @@ session_start();
     </head>
     <body>  
         <?php  
+        /*
         require_once 'Produtos.php';
         require_once 'includes/funcoes.php';
         require_once 'core/conexao_mysql.php';
@@ -43,7 +44,7 @@ session_start();
             where categoriaID = Produto.fk_categoria) as categoria'],
         $criterio2
         );
-        ?>
+        */?>
 
     <div id="main" >
     <div class="p1">
@@ -63,7 +64,7 @@ session_start();
                     
                         <p>Quantidade:</p>
 
-                        <span>Cidade, Estado</span>
+                        <img width="20" height="30" src="lib/img/GPS_Icon.png" alt=""><span>Cidade, Estado</span><br>
 
                     <span>Compartilhe este produto:</span> <br>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/Projeto_Doin/PROGRAMAS/blog-main/Pagina_Produto.php" target="_blank">

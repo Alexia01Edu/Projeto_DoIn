@@ -18,27 +18,28 @@ body{
     margin-top: 13%;
     border: 3px solid black;
     width:80vw;
-    height:700px;
+    height:600px;
     background-color: #fff;
     box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.212);
 }
 #nome{
-    
+    margin-top: 1%;
     font-family: Roboto, sans-serif;
-    height: 3%;
-    font-weight: 500;
+    height: 2%;
     width: 85%;
     font-size: 28px;
 }
 .card{
     border: 3px solid black;
-    height: 87%;
-    width: 85%;
+    height: 86%;
+    width: 83%;
     display: flex;
     
 }
 .transacao{
-    border: 3px solid black;
+    color: #197abb;
+    font-size: 34px;
+    font-weight: bold;
     width: auto;
     height: auto;
     margin-right: 0.5%;
@@ -48,16 +49,17 @@ body{
     margin-top: 1%;
     margin-left: 1%;
     border: 3px solid black;
-    width:60%;
-    height:80%;
+    width:65%;
+    height:95%;
     background-color: aliceblue;
     display: flex;
 }
 #infoProd{
+    border: 3px solid black;
     width: 30%;
     height:80%;
-    margin-left: 2%;
-    margin-top: 2%;
+    margin-left: 1.6%;
+    margin-top: 1%;
     font-size: 16px;
 }
 table{

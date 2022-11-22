@@ -50,14 +50,16 @@ session_start();
     <div class="p1">
     <h3 id="nome">nome do produto</h3>   
     <div class="card" > 
+    
         <div class="imagem">               
         <img src="" alt=""> 
         </div> 
         <div class="lista">
             <div class="envoltorio">
+                
                 <img src="lib/img/GPS_Icon.png" alt="" class="imagens">
             </div>
-        </div>           
+        </div>        
                 <div id="infoProd">
 
                     <strong class="transacao">Troca, doacao</strong><br>

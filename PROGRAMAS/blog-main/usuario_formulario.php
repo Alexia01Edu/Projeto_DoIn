@@ -36,7 +36,8 @@
                         require_once 'core/conexao_mysql.php';
                         require_once 'core/sql.php';
                         require_once 'core/mysql.php';
-
+                        
+                        
                         if(isset($_SESSION['login'])) {
                             //A função isset() é utilizada para a checagem de determinada variável quando precisamos saber se ela está vazia 
                             //ou já está configurada com algum valor.

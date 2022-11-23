@@ -18,7 +18,7 @@ body{
     margin-top: 13%;
     border: 3px solid black;
     width:80vw;
-    height:600px;
+    height:800px;
     background-color: #fff;
     box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.212);
 }
@@ -35,6 +35,9 @@ body{
     width: 95%;
     display: flex;
     
+}
+.btn,.labels{
+    display: none;
 }
 .transacao{
     color: #197abb;
@@ -117,7 +120,10 @@ a{
     margin-left: 5%;
 }
 
-@media screen and (max-width: 1064px) {
+@media screen and (max-width: 890px) {
+    .btn,.labels{
+        display: flex;
+    }
     #main{
         width:100vw;
         margin: 0;

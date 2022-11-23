@@ -44,6 +44,7 @@ session_start();
             where categoriaID = Produto.fk_categoria) as categoria'],
         $criterio2
         );
+        $tam = count($imagens);
         */?>
 
     <div id="main" >
@@ -54,12 +55,27 @@ session_start();
         <div class="imagem">               
         <img src="" alt=""> 
         </div> 
+    <div class="navega">
         <div class="lista">
+
+            <div class="btn">
+            <?php //for($i=1; $i<=5; $i++)?>
+            <input type="radio" id="<?php //echo 'btn'.$i?>">
+            <?php //endfor; ?>
+            </div>
+
             <div class="envoltorio">
-                
                 <img src="lib/img/GPS_Icon.png" alt="" class="imagens">
             </div>
-        </div>        
+
+        </div>
+        
+        <div class="labels">
+            <?php //for($i=1; $i<=5; $i++)?>
+                <label for="<?php //echo 'btn'.$i?>"></label>
+            <?php //endfor; ?>
+        </div>
+    </div>        
                 <div id="infoProd">
 
                     <strong class="transacao">Troca, doacao</strong><br>

@@ -37,7 +37,7 @@ switch($acao){
                 die('arquivo muito grande!! Max: 2MB');
             
             $pasta = '..imagens/';
-            $nomeImagem = $name;
+            $nomeImagem = $imagem_name;
             $novoNomeImagem = uniqid();
             $extensao = strtolower(pathinfo($nomeImagem, PATHINFO_EXTENSION));
             
@@ -50,7 +50,6 @@ switch($acao){
 
         $dados = [
             'Imagem_arq' => $Imagem_arq,
-            'dataImg' => $dataImg,
             'descricaoImg' => $descricaoImg,
             'imagem_name' => $imagem_name,
             //'data_postagem' => "$data_postagem $hora_postagem",

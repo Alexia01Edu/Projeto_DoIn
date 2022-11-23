@@ -82,12 +82,9 @@ body {
     background-color: #fde3a7d7;
     padding: 1rem;
 }
-
-.form-image img {
-    width: 30rem;
-    height: 27rem;
+.imagem input[type='file']{
+    display: none;
 }
-
 .form {
     width: 50%;
     display: flex;
@@ -114,7 +111,7 @@ body {
     margin-top: 1%;
 }
 
-.input-box input {
+.input-box input,textarea{
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;
@@ -122,12 +119,11 @@ body {
     box-shadow: 1px 1px 6px #0000001c;
     font-size: 0.8rem;
 }
-
 .input-box input:hover {
     background-color: #eeeeee75;
 }
 
-.input-box input:focus-visible {
+.input-box textarea,input:focus-visible {
     outline: 1px solid #6c63ff;
 }
 
@@ -138,7 +134,7 @@ body {
     color: #000000c0;
 }
 
-.input-box input::placeholder {
+.input-box textarea,input::placeholder {
     color: #000000be;
 }
 
@@ -163,7 +159,7 @@ body {
     margin-right: 0.35rem;
 }
 
-.gender-input label {
+.imagem,.gender-input label {
     font-size: 0.81rem;
     font-weight: 600;
     color: #000000c0;
@@ -190,39 +186,20 @@ body {
     color: #fff;
 }
 
-@media screen and (max-width: 1330px) {
-
-    .form-image {
-        display: none;
-    }
-    #posicao{
-        width: 80%;
-    }
-    .form {
-        width: 100%;
-    }
-
-    .continue-button button {
-        width: 100%;
-    }
-}
 
 @media screen and (max-width: 1064px) {
-    
-    #posicao{
-        width: 90%;
-    }
-    .container {
-        height: auto;
-    }
+
+
     .input-group {
         flex-direction: column;
         z-index: 5;
-        padding-right: 10%;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
         flex-wrap: nowrap;
     }
     .gender-inputs {
-        margin-top: 2%;
+        margin-top: 4%;
     }
     .gender-group {
         flex-direction: column;
@@ -230,7 +207,11 @@ body {
     .gender-title h6 {
         margin: 0;
     }
+    .gender-input {
+        margin-top: 0.5rem;
+    }
     .continue-button button {
         width: 100%;
     }
+
 }

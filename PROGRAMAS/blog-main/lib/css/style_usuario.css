@@ -190,34 +190,9 @@ body {
     color: #fff;
 }
 
-@media screen and (max-width: 1330px) {
-
-    .form-image {
-        display: none;
-    }
-    #posicao{
-        width: 80%;
-    }
-    .input-group {
-        overflow-y: scroll;
-    }
-    .form {
-        width: 100%;
-    }
-
-    .continue-button button {
-        width: 100%;
-    }
-}
 
 @media screen and (max-width: 1064px) {
-    
-    #posicao{
-        width: 90%;
-    }
-    .container {
-        height: auto;
-    }
+
     .input-group {
         flex-direction: column;
         z-index: 5;

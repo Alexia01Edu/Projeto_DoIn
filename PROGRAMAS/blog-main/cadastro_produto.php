@@ -14,9 +14,7 @@
 </head>
 
 <body>
-<?php 
-        include 'includes/valida_login.php';
-?>
+
 <div id="posicao">
 <div class="form-header">
         <div class="title">
@@ -27,9 +25,35 @@
         </div>
 </div>
     <div class="container">
+        <!--Cadastro de imagens-->
         <div class="form-image">
-            <img src="lib/img/cadastro_produto.png" alt="">
+
+        <form method = "post" action ="" enctype="multipart/form-data"> 
+        <div class="input-group">
+            <div class="imagem">
+            <script>
+                $("#imagens").on("change", function() {
+                if ($("#imagens")[0].files.length > 2) {
+                alert("You can select only 2 images");
+                } else {
+                $("#imageUploadForm").submit();
+                }
+                });
+            </script>
+                <label for="imagem">Imagem: </label> 
+                <input multiple="multiple" type="file" name="imagens[]" id="imagens">
+            </div>
+            <div class="input-box">
+                <label for="titulo">Descrição para as imagens</label>
+                <textarea type="text" require="required" id="descricaoImg" name="descricaoImg" 
+                placeholder="essa imagem mostra os filhotes de cachorros labrador que eu quero Doar/Trocar"rows="5"> </textarea>
+            </div>
+            
         </div>
+        </form>
+
+        </div>
+        <!--final-->
         <div class="form">
             
             <form method="post" action="core/produto_repositorio.php" id="formProd">
@@ -42,7 +66,7 @@
                         <input id="name" type="text" name="nome_prod" placeholder="Digite o nome" required>
                     </div>
                     <div class="input-box">
-                        <label for="email">Descrição</label>
+                        <label for="descricao_produto">Descrição</label>
                         <input id="descricao_produto" type="text" name="descricao" placeholder="Descreva o produto" required>
                     </div>
 
@@ -137,7 +161,7 @@
         </div>
     </div>
     <div class="continue-button" >
-        <button type="submit" form="formProd"><a href="Ranking.php">Continuar</a> </button>
+        <button type="submit" form="formProd"><a href="#">Continuar</a> </button>
     </div>
 </div>
 </body>

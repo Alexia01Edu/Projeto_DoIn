@@ -111,12 +111,12 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 3%;
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 .input-box input {
-    margin: 0.6rem 0;
-    padding: 0.8rem 1.2rem;
+    margin: 0.7px 0;
+    padding: 12px 1.3px;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
@@ -176,7 +176,7 @@ body {
     width: 50%;
     border: none;
     background-color: #6c63ff;
-    padding: 0.62rem;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -192,7 +192,12 @@ body {
 
 
 @media screen and (max-width: 1064px) {
-
+    .form-image{
+        display: none;
+    }
+    .form{
+        width: 100%;
+    }
     .input-group {
         flex-direction: column;
         z-index: 5;

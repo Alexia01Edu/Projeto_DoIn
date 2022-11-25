@@ -16,6 +16,7 @@ body {
     background: #0c0ce94d;
 }
 
+/* inicio do css do cadastro do Produto*/
 .form-header {
     margin-left: auto;
     margin-right: auto;
@@ -68,23 +69,90 @@ body {
 }
 
 .container {
-
+    
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.212);
 }
 
 .form-image {
+    background: linear-gradient(to left, rgb(45, 38, 74), rgb(32, 32, 36));
+    color: #ffffff;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fde3a7d7;
+    /*background-color: #fde3a7d7;*/
     padding: 1rem;
 }
-.imagem input[type='file']{
-    display: none;
+/*inicio do css do form imagem*/
+.containerimg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
+
+.containerimg button {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 3px solid rgb(130, 87, 230);
+    border-radius: 10px;
+    background: transparent;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.input-file-upload {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn {
+    width: 100%;
+    border: 2px dashed rgb(130, 87, 230)!important;
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    padding: 19px 40px;
+
+}
+
+.upload-btn input[type=file] {
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.upload_img {
+    display: inline-block;
+    border: 3px solid rgb(130, 87, 230);
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    vertical-align: middle;
+    margin-top: 20px;
+}
+#d-img{
+    color: #ffffff;
+}
+/*Final do form imagem*/
 .form {
     width: 50%;
     display: flex;
@@ -94,6 +162,7 @@ body {
     background-color: #fff;
     padding: 5%;
     padding-top: 5%;
+    
 }
 
 
@@ -108,12 +177,12 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 3%;
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 .input-box input,textarea{
-    margin: 0.6rem 0;
-    padding: 0.8rem 1.2rem;
+    margin: 0.7px 0;
+    padding: 12px 1.3px;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
@@ -129,6 +198,7 @@ body {
 
 .input-box label,
 .gender-title h6 {
+    margin-bottom: 1%;
     font-size: 0.75rem;
     font-weight: 600;
     color: #000000c0;
@@ -172,7 +242,7 @@ body {
     width: 50%;
     border: none;
     background-color: #6c63ff;
-    padding: 0.62rem;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -187,7 +257,7 @@ body {
 }
 
 
-@media screen and (max-width: 1064px) {
+@media screen and (max-width: 1000px) {
 
 
     .input-group {

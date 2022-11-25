@@ -11,6 +11,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lib/css/style_produto.css">
     <title>Formulário</title>
+    <script>
+
+$("#inputImg").change(function() {
+      readURL(this);
+    });
+
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+         for(x in input.files){
+        var reader = new FileReader();
+                reader.readAsDataURL(input.files[x]);
+        reader.onload = function(e) {
+          $('<img style="max-width:50px">').appendTo("form").attr('src',        e.target.result);
+        }
+
+      }
+   }
+}
+    </script>
 </head>
 
 <body>
@@ -28,28 +47,23 @@
         <!--Cadastro de imagens-->
         <div class="form-image">
 
-        <form method = "post" action ="" enctype="multipart/form-data"> 
-        <div class="input-group">
-            <div class="imagem">
-            <script>
-                $("#imagens").on("change", function() {
-                if ($("#imagens")[0].files.length > 2) {
-                alert("You can select only 2 images");
-                } else {
-                $("#imageUploadForm").submit();
-                }
-                });
-            </script>
-                <label for="imagem">Imagem: </label> 
-                <input multiple="multiple" type="file" name="imagens[]" id="imagens">
+        <form method = "post" action ="" enctype="multipart/form-data" id="formProd"> 
+            <div class="containerimg">
+                    <div class="input-file-upload">
+                        <div class="upload-btn">
+                            <button class="btn">
+                                Selecionar o arquivo
+                            </button>
+                            <input type="file" id="upfile" name='imagens[]' onchange="readURL(this); " multiple>
+                        </div>
+                        <img class="upload_img" id="file_upload">
+                    </div>      
             </div>
             <div class="input-box">
-                <label for="titulo">Descrição para as imagens</label>
+                <label for="titulo" id="d-img">Descrição para as imagens</label>
                 <textarea type="text" require="required" id="descricaoImg" name="descricaoImg" 
-                placeholder="essa imagem mostra os filhotes de cachorros labrador que eu quero Doar/Trocar"rows="5"> </textarea>
+                placeholder="essa imagem mostra os filhotes de cachorros labrador que eu quero Doar/Trocar"rows="3"> </textarea>
             </div>
-            
-        </div>
         </form>
 
         </div>
@@ -151,10 +165,9 @@
                             <option value="7">Alimentos</option>
                             <option value="8">Bebidas</option>
                             <option value="9">Esporte</option>
-                            <option value="10">Lazer</option>
-                            <option value="11">Eletrônicos</option>
-                            <option value="12">Pet Animais</option>
-                            <option value="13">Pet Produtos</option>
+                            <option value="10">Eletrônicos</option>
+                            <option value="11">Pet Animais</option>
+                            <option value="12">Pet Produtos</option>
                         </select>
                     </div>
             </form>
@@ -164,6 +177,8 @@
         <button type="submit" form="formProd"><a href="#">Continuar</a> </button>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 </body>
 
 </html>

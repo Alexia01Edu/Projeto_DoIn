@@ -2,8 +2,8 @@ INSERT INTO categoria(categoriaID, nome)
 values
 (1,'Beleza'),(2,'Saúde'),(3,'Casa'),(4,'Eletrodomésticos'),
 (5,'Móveis'),(6,'Decoração'),(7,'Alimentos'),(8,'Bebidas'),
-(9,'Esporte'),(10,'Lazer'),(11,'Eletrônicos'),(12,'Pet Animais'),
-(13, 'Pet Produtos');
+(9,'Esporte'),(10,'Eletrônicos'),(11,'Pet (Animais)'),
+(12, 'Pet (Produtos)');
 
 INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone)
 VALUES('ze', 'z@gmail.com', 123, 'feminino','62636391304','2020-02-23', '(12) 99176-5162');   

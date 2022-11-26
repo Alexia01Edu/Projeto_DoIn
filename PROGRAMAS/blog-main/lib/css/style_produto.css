@@ -69,92 +69,74 @@ body {
 }
 
 .container {
-    
-    height: 80vh;
-    display: flex;
+    min-height: 80vh;
+    display: block;
     box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.212);
 }
 
 .form-image {
     background: linear-gradient(to left, rgb(45, 38, 74), rgb(32, 32, 36));
     color: #ffffff;
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /*background-color: #fde3a7d7;*/
-    padding: 1rem;
+    padding: 10px;
 }
 /*inicio do css do form imagem*/
-.containerimg {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-.containerimg button {
-    cursor: pointer;
-    outline: none;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 20px;
-    padding: 10px 20px;
-    border: 3px solid rgb(130, 87, 230);
-    border-radius: 10px;
-    background: transparent;
-    margin-top: 10px;
-    color: #ffffff;
-}
-
-.input-file-upload {
-    display: flex;
-    flex-direction: column;
-}
-
-.upload-btn {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-}
-
-.btn {
+.containerimg{
+    /*background-color: #ffffff;*/
     width: 100%;
-    border: 2px dashed rgb(130, 87, 230)!important;
-    font-size: 19px;
-    font-weight: 700;
+    min-width: 450px;
+    position: relative;
+    margin:  50px auto;
+    padding: 50px 20px;
+    border-radius: 7px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+}
+input[type="file"]{
+    display: none;
+}
+.containerimg label{
+    display: block;
+    position: relative;
+    background-color: #6b63fff1;
     color: #ffffff;
+    font-size: 18px;
     text-align: center;
-    padding: 19px 40px;
-
-}
-
-.upload-btn input[type=file] {
-    font-size: 20px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-}
-
-.upload_img {
-    display: inline-block;
-    border: 3px solid rgb(130, 87, 230);
     width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    object-fit: cover;
-    object-position: 50% 50%;
-    vertical-align: middle;
-    margin-top: 20px;
+    padding: 18px 0;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
 }
-#d-img{
-    color: #ffffff;
+.containerimg p{
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+#images{
+    width: 90%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+figure{
+    width: 45%;
+}
+img{
+    width: 100%;
+}
+figcaption{
+    text-align: center;
+    font-size: 2.4vmin;
+    margin-top: 0.5vmin;
 }
 /*Final do form imagem*/
 .form {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,8 +163,8 @@ body {
 }
 
 .input-box input,textarea{
-    margin: 0.7px 0;
-    padding: 12px 1.3px;
+    margin: 0.3px 0;
+    padding: 15px 50px;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;

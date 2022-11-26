@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 <!-- https://undraw.co/illustrations  link para imagens--> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,39 +7,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lib/css/style_produto.css">
     <title>Formulário</title>
-    <script>
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#file_upload') 
-                .attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-$("#inputImg").change(function() {
-      readURL(this);
-    });
-
-    function readURL(input) {
-      if (input.files && input.files[0]) {
-         for(x in input.files){
-        var reader = new FileReader();
-                reader.readAsDataURL(input.files[x]);
-        reader.onload = function(e) {
-          $('<img style="max-width:50px">').appendTo("form").attr('src',        e.target.result);
-        }
-
-      }
-   }
-}
-    </script>
 </head>
-
 <body>
 
 <div id="posicao">
@@ -59,16 +30,14 @@ $("#inputImg").change(function() {
 
         <form method = "post" action ="" enctype="multipart/form-data" id="formProd"> 
             <div class="containerimg">
-                    <div class="input-file-upload">
-                        <div class="upload-btn">
-                            <button class="btn">
-                                Selecionar o arquivo
-                            </button>
-                            <input type="file" id="upfile" name='imagens[]' onchange="readURL(this); " multiple>
-                        </div>
-                        <img class="upload_img" id="file_upload">
-                    </div>      
+                <input type="file" id="file-input" name='imagens[]' accept="image/png, image/jpeg" onchange="preview()" multiple>
+                <label for="file-input">
+                    <i class="fas fa-upload"></i> &nbsp; Choose A Photo
+                </label>
+                <p id="num-of-files">No Files Chosen</p>
+                <div id="images"></div>
             </div>
+
             <div class="input-box">
                 <label for="titulo" id="d-img">Descrição para as imagens</label>
                 <textarea type="text" require="required" id="descricaoImg" name="descricaoImg" 
@@ -187,7 +156,7 @@ $("#inputImg").change(function() {
         <button type="submit" form="formProd"><a href="#">Continuar</a> </button>
     </div>
 </div>
-
+<script src="lib/js/cadastroimg.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 </body>
 

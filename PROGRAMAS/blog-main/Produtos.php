@@ -53,13 +53,16 @@ session_start();
                       foreach($result as $entidade) : 
      
                     ?>
-                
-                <div class="card" >
+                <div class="p1">
+                    <div class="postit">  
+                        <img src="lib/img/azul.jpg" alt="" id="img"><h2><?php echo $entidade['modoOperacao']?></h2>
+                    </div>
+                    <div class="card" >
                     <a href="Pagina_Produto.php?id=<?php echo $entidade['produtoID'] ?>" class="link efeitos">
-                        
-                    <h2 class="titulo-card"><?php echo $entidade['modoOperacao']?></h2>
-                    
+                   
+                    <div class="envoltorio">
                     <img src="" alt="">
+                    </div>
                     <div>
                         <h3><?php echo $entidade['nome_prod']?></h3>
                         <div class="info">
@@ -69,7 +72,9 @@ session_start();
                     </div>
                     </a>
                 </div>
+                </div>
                 <?php endforeach; ?>
+                
             </div>
     </body>
 </html>

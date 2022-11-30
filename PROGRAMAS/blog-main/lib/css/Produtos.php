@@ -4,6 +4,7 @@ body{
     padding: 0%;
     margin: 0%;
     font-size:30px;
+    font-family: Tahoma, Geneva, sans-serif;
 }
 #prop{
     float: left;
@@ -18,17 +19,49 @@ body{
     width: 75vw;
     height: 100vh;
 }
-
-.card{
-
-    width: 23%;
-    height: 40%;
-    font-family: Tahoma, Geneva, sans-serif;
-    display:inline-block;
+.p1{
     margin: 10px;
+    width: 250px;
+    height: 340px;
+    display:inline-block;
+    position: relative;
+}
+.card{
+    object-fit: contain;
+    width: 97%;
+    height: 100%;
     font-size:50%;
     -webkit-box-shadow: 0px 4px 14px -2px rgba(0,0,0,0.71); 
     box-shadow: 0px 4px 14px -2px rgba(0,0,0,0.71);
+}
+
+.postit{
+    display: flex;
+    border-radius: 6px;
+    padding: 8px;
+    width: 80px;
+    height: 80px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    right: 0%;
+    -webkit-box-shadow: -3px 4px 5px 3px rgba(0,0,0,0.29);
+-moz-box-shadow: -3px 4px 5px 3px rgba(0,0,0,0.29);
+box-shadow: -3px 4px 5px 3px rgba(0,0,0,0.29);
+}
+#img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+h2{
+    position: absolute;
+    font-size:16px;
 }
 .link{
     border: 0px solid #FFFFFF;
@@ -51,6 +84,24 @@ body{
         "image"
         "body";
 }
+.envoltorio{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    border-width: 1px;
+    border-color:rgb(0, 134, 255);
+    border-style: solid;
+    border-radius: 6px;
+    padding: 8px;
+    width: 210px;
+    height: 180px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
 h3{
     font-size: 18px;
     letter-spacing: 0.4px;
@@ -61,7 +112,6 @@ h3{
     font-style: normal;
     font-variant: normal;
     text-transform: capitalize;
-   
 }
 .info{
     

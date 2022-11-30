@@ -49,7 +49,8 @@ session_start();
 
     <div id="main" >
     <div class="p1">
-    <h3 id="nome">nome do produto</h3>   
+        
+            <h3 id="nome">nome do produto</h3>   
     <div class="card" > 
     
         <div class="imagem">               

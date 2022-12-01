@@ -216,16 +216,9 @@
                             <option value="H5">H5</option>
                             <option value="H6">H6</option>
                             </select>
-                            <!-- Font -->
-                            <select id="fontSize" class="adv-option-button"></select>
-                            <!-- Color -->
                             <div class="input-wrapper">
                             <input type="color" id="foreColor" class="adv-option-button" />
                             <label for="foreColor">Font Color</label>
-                            </div>
-                            <div class="input-wrapper">
-                            <input type="color" id="backColor" class="adv-option-button" />
-                            <label for="backColor">Highlight Color</label>
                             </div>
                             </div>
                         <div id="text-input" contenteditable="true"></div>

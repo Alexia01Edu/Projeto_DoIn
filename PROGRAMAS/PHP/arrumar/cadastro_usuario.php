@@ -75,11 +75,6 @@
                         <input id="senha" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
-
-                    <div class="input-box">
-                        <label for="confirmar">Confirme sua Senha</label>
-                        <input id="confirmar" type="password" name="senha" placeholder="Digite sua senha novamente" required>
-                    </div>
                 </div>
                 </div>
 

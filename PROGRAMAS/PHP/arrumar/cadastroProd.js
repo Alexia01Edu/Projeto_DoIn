@@ -28,8 +28,6 @@ function preview(){
 
 let optionsButtons = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
-let fontName = document.getElementById("fontName");
-let fontSizeRef = document.getElementById("fontSize");
 let writingArea = document.getElementById("text-input");
 let linkButton = document.getElementById("createLink");
 let alignButtons = document.querySelectorAll(".align");
@@ -39,24 +37,6 @@ let scriptButtons = document.querySelectorAll(".script");
 //List of fontlist
 
 //Initial Settings
-const initializer = () => {
-  //function calls for highlighting buttons
-  //No highlights for link, unlink,lists, undo,redo since they are one time operations
-  highlighter(alignButtons, true);
-  highlighter(spacingButtons, true);
-  highlighter(formatButtons, false);
-  highlighter(scriptButtons, true);
-
-  //fontSize allows only till 7
-  for (let i = 1; i <= 7; i++) {
-    let option = document.createElement("option");
-    option.value = i;
-    option.innerHTML = i;
-    fontSizeRef.appendChild(option);
-  }
-  //default size
-  fontSizeRef.value = 3;
-};
 //main logic
 const modifyText = (command, defaultUi, value) => {
   //execCommand executes command on selected text
@@ -114,4 +94,4 @@ const highlighterRemover = (className) => {
     button.classList.remove("active");
   });
 };
-window.onload = initializer();
+//window.onload = initializer();

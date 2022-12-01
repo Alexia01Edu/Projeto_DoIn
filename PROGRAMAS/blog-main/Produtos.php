@@ -61,13 +61,14 @@ session_start();
                     <a href="Pagina_Produto.php?id=<?php echo $entidade['produtoID'] ?>" class="link efeitos">
                    
                     <div class="envoltorio">
-                    <img src="" alt="">
+                    <img src="lib/img/cadastro_produto.png" alt="">
                     </div>
-                    <div>
+                    <div class="info">
                         <h3><?php echo $entidade['nome_prod']?></h3>
-                        <div class="info">
-                        <span class="data">Data de validade: <?php echo $entidade['dataValidade']?></span>
+                        <div>
+                        <p>Unidades: <?php echo $entidade['quant']?></p>
                         <p class="lugar"><?php echo $entidade['cidade']?>, <?php echo $entidade['estado']?></p>
+                        <span class="data">Data de validade: <?php echo $entidade['dataValidade']?></span>
                         </div>
                     </div>
                     </a>

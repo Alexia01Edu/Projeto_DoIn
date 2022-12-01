@@ -18,9 +18,12 @@ body{
     background-color: blue;
     width: 75vw;
     height: 100vh;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 .p1{
-    margin: 10px;
+    margin-top: 10px;
+    margin-left: 8px;
     width: 250px;
     height: 340px;
     display:inline-block;
@@ -38,7 +41,7 @@ body{
 .postit{
     display: flex;
     border-radius: 6px;
-    padding: 8px;
+    padding: 6px;
     width: 80px;
     height: 80px;
     -webkit-box-align: center;
@@ -53,15 +56,17 @@ body{
 -moz-box-shadow: -3px 4px 5px 3px rgba(0,0,0,0.29);
 box-shadow: -3px 4px 5px 3px rgba(0,0,0,0.29);
 }
+
 #img{
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
+
 h2{
     position: absolute;
-    font-size:16px;
+    font-size:14px;
 }
 .link{
     border: 0px solid #FFFFFF;
@@ -80,9 +85,6 @@ h2{
     text-decoration: none;
     cursor: pointer;
     overflow: hidden;
-    grid-template-areas:
-        "image"
-        "body";
 }
 .envoltorio{
     margin-left: auto;
@@ -92,8 +94,8 @@ h2{
     border-color:rgb(0, 134, 255);
     border-style: solid;
     border-radius: 6px;
-    padding: 8px;
-    width: 210px;
+    padding: 1px;
+    width: 220px;
     height: 180px;
     -webkit-box-align: center;
     align-items: center;
@@ -102,42 +104,43 @@ h2{
     cursor: pointer;
     position: relative;
 }
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.info{
+    padding: 2px;
+}
+
 h3{
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 0.4px;
     word-spacing: 0.6px;
     color: #252525;
-    font-weight: 400;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
+    font-weight: 500;
     text-transform: capitalize;
 }
-.info{
-    
-}
+
 span{
     font-size: 13px;
     letter-spacing: 0.6px;
     word-spacing: 0.6px;
     color: #A0A0A0;
     font-weight: 400;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
 }
 p{
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.2px;
     word-spacing: 3px;
     color: #666666;
     font-weight: 400;
     text-decoration: none solid rgb(68, 68, 68);
-    font-style: normal;
-    font-variant: normal;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
+
 
 @media only screen and (max-width: 992px){
   div.prop{

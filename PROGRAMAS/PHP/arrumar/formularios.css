@@ -26,7 +26,17 @@ body {
     display: flex;
     justify-content: center;
 }
-/* começa aqui*/
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #6c63ff;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+/*botão de login*/
 .login-button {
     margin-left: 5%;
     display: flex;
@@ -50,101 +60,23 @@ body {
     color: #fff;
 }
 /*acaba aqui*/
-.form-header h1::after {
-    content: '';
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
-    background-color: #6c63ff;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
-}
+
 
 #posicao{
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 80%;
 }
-
-.container {
-    min-height: 80vh;
-    display: block;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.212);
-}
-
-.form-image {
-    background: linear-gradient(to left, rgb(45, 38, 74), rgb(32, 32, 36));
-    color: #ffffff;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-/*inicio do css do form imagem*/
-.containerimg{
-    /*background-color: #ffffff;*/
-    width: 100%;
-    min-width: 450px;
-    position: relative;
-    margin:  50px auto;
-    padding: 30px 20px;
-    border-radius: 7px;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.05);
-}
-input[type="file"]{
-    display: none;
-}
-.containerimg label{
-    display: block;
-    position: relative;
-    background-color: #6b63fff1;
-    color: #ffffff;
-    font-size: 18px;
-    text-align: center;
-    width: 300px;
-    padding: 18px 0;
-    margin: auto;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.containerimg p{
-    text-align: center;
-    margin: 20px 0 30px 0;
-}
-#images{
-    width: 90%;
-    position: relative;
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-figure{
-    width: 45%;
-}
-img{
-    width: 100%;
-}
-figcaption{
-    text-align: center;
-    font-size: 2.4vmin;
-    margin-top: 0.5vmin;
-}
-/*Final do form imagem*/
+/*container exclusivo*/
+/*form image exclusivo*/
 .form {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
     padding: 5%;
-    padding-top: 5%;
-    
+    padding-top: 5%;  
 }
 
 
@@ -171,12 +103,11 @@ figcaption{
     font-size: 15px;
 }
 
-#descrição
 .input-box input:hover {
     background-color: #eeeeee75;
 }
 
-.input-box textarea,input:focus-visible {
+.input-box input:focus-visible {
     outline: 1px solid #6c63ff;
 }
 
@@ -188,7 +119,7 @@ figcaption{
     color: #000000c0;
 }
 
-.input-box textarea,input::placeholder {
+.input-box input::placeholder {
     color: #000000be;
 }
 
@@ -196,7 +127,7 @@ figcaption{
     box-sizing: 50px;
 }
 
-.gender-group {
+.radio-group {
     display: flex;
     justify-content: space-between;
     margin-top: 0.62rem;
@@ -204,16 +135,16 @@ figcaption{
     padding: 0 .5rem;
 }
 
-.gender-input {
+.radio-input {
     display: flex;
     align-items: center;
 }
 
-.gender-input input {
+.radio-input input {
     margin-right: 0.35rem;
 }
 
-.imagem,.gender-input label {
+.imagem,.radio-input label {
     font-size: 0.81rem;
     font-weight: 600;
     color: #000000c0;
@@ -252,16 +183,16 @@ figcaption{
         overflow-y: scroll;
         flex-wrap: nowrap;
     }
-    .gender-inputs {
+    .radio-inputs {
         margin-top: 4%;
     }
-    .gender-group {
+    .radio-group {
         flex-direction: column;
     }
-    .gender-title h6 {
+    .radio-title h6 {
         margin: 0;
     }
-    .gender-input {
+    .radio-input {
         margin-top: 0.5rem;
     }
     .continue-button button {

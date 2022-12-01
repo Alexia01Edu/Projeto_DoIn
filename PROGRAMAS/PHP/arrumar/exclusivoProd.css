@@ -1,0 +1,201 @@
+#posicao{
+    width: 70%;
+}
+.container {
+    min-height: 70vh;
+    display: block;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.212);
+}
+
+/*inicio do css do form imagem*/
+.form-image {
+    background: linear-gradient(to left, rgb(45, 38, 74), rgb(32, 32, 36));
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.containerimg{
+    /*background-color: #ffffff;*/
+    width: 100%;
+    min-width: 450px;
+    position: relative;
+    margin:  50px auto;
+    padding: 30px 20px;
+    border-radius: 7px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+}
+input[type="file"]{
+    display: none;
+}
+.containerimg label{
+    display: block;
+    position: relative;
+    background-color: #6b63fff1;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    width: 300px;
+    padding: 18px 0;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.containerimg p{
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+#images{
+    width: 90%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+figure{
+    width: 45%;
+}
+img{
+    width: 100%;
+}
+figcaption{
+    text-align: center;
+    font-size: 2.4vmin;
+    margin-top: 0.5vmin;
+}
+/*Final do form imagem*/
+
+.form {
+    width: 100%;    
+}
+/*inicio da descrição*/
+.descricao {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 50px 30px;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px #0000001c;
+  }
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+  }
+  .descricao button {
+    height: 28px;
+    width: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+    color: #020929;
+  }
+  select {
+    padding: 7px;
+    border: 1px solid #020929;
+    border-radius: 3px;
+  }
+  .options label,
+  .options select {
+    font-family: "Poppins", sans-serif;
+  }
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+  }
+  input[type="color"]::-webkit-color-swatch {
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+  }
+  input[type="color"]::-moz-color-swatch {
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+  }
+  #text-input {
+    margin-top: 10px;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    height: 50vh;
+  }
+  .active {
+    background-color: #e0e9ff;
+  }
+
+/*Fim da descrição*/
+
+
+/*input-group*/
+
+/*input-box*/
+
+/*.input-box input*/
+
+/*.input-box input:hover*/
+
+/*.input-box input:focus-visible*/
+
+/*.input-box label,
+.gender-title h6*/
+
+/*.input-box input::placeholder*/
+
+/*.input-box label*/
+
+/*.radio-group*/
+/*.radio-input*/
+/*.radio-input input*/
+/*.imagem,.radio-input label*/
+
+/*.continue-button button*/
+/*.continue-button button:hover*/
+/*.continue-button button a*/
+
+
+@media screen and (max-width: 1000px) {
+
+
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+    .gender-inputs {
+        margin-top: 4%;
+    }
+    .gender-group {
+        flex-direction: column;
+    }
+    .gender-title h6 {
+        margin: 0;
+    }
+    .gender-input {
+        margin-top: 0.5rem;
+    }
+    .continue-button button {
+        width: 100%;
+    }
+
+}

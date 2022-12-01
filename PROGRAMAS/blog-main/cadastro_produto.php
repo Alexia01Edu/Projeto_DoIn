@@ -58,10 +58,6 @@
                         <label for="name">Nome</label>
                         <input id="name" type="text" name="nome_prod" placeholder="Digite o nome" required>
                     </div>
-                    <div class="input-box">
-                        <label for="descricao_produto">Descrição</label>
-                        <input id="descricao_produto" type="text" name="descricao" placeholder="Descreva o produto" required>
-                    </div>
 
                         <div class="input-box">
                             <label for="estado">Estado</label></br>
@@ -108,7 +104,10 @@
                         <label for="Quantidade">Quantidade</label>
                         <input id="Quantidade" type="number" min="1" step="1" name="quant" >
                     </div>
-
+                    <div class="input-box">
+                        <label for="descricao_produto">Descrição</label>
+                        <input id="descricao_produto" type="text" name="descricao" placeholder="Descreva o produto" required>
+                    </div>
                 </div>
 
                 <div class="gender-inputs">

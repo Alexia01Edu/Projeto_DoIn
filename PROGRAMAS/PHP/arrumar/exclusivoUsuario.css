@@ -1,0 +1,113 @@
+#posicao{
+    width: 80%;
+}
+.container {
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.212);
+}
+
+/*começo form image*/
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #fde3a7d7;
+    padding: 1rem;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.max-width {
+    max-width: 400px;
+    width: 100%;
+}
+
+#imgPhoto {
+    margin-top: 10%;
+    width: 300px;
+    height: 300px;
+    padding:10px;
+    background-color: #eee;
+    border: 5px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background.3s;
+}
+
+#imgPhoto:hover{
+    background-color: rgb(180, 180, 180);
+    border: 5px solid #111;
+}
+/*final form image*/
+
+.form {
+    width: 50%;
+}
+
+/*input-group*/
+
+/*input-box*/
+
+/*.input-box input*/
+
+/*.input-box input:hover*/
+
+/*.input-box input:focus-visible*/
+
+/*.input-box label,
+.gender-title h6*/
+
+/*.input-box input::placeholder*/
+
+/*.input-box label*/
+
+/*.radio-group*/
+/*.radio-input*/
+/*.radio-input input*/
+/*.imagem,.radio-input label*/
+
+
+/*.continue-button button*/
+/*.continue-button button:hover*/
+/*.continue-button button a*/
+/**/
+
+
+@media screen and (max-width: 1064px) {
+    .form-image{
+        display: none;
+    }
+    .form{
+        width: 100%;
+    }
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+    .gender-inputs {
+        margin-top: 4%;
+    }
+    .gender-group {
+        flex-direction: column;
+    }
+    .gender-title h6 {
+        margin: 0;
+    }
+    .gender-input {
+        margin-top: 0.5rem;
+    }
+    .continue-button button {
+        width: 100%;
+    }
+}

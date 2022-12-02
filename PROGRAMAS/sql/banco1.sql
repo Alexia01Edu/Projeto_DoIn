@@ -53,7 +53,6 @@ create table usuario (
     Imagem_arq          varchar(255)    not null,
     dataImg 		    datetime        not null default current_timestamp,
     descricaoImg	    varchar(30)		null,
-    imagem_name         varchar(100)    not null,
     fk_produto 		    int         	not null,
     primary key (imagemID),
     foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade

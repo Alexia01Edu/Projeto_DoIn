@@ -17,7 +17,6 @@
     <title>Formulário</title>
 </head>
 <body>
-
 <div id="posicao">
 <div class="form-header">
         <div class="title">
@@ -31,7 +30,7 @@
         <!--Cadastro de imagens-->
         <div class="form-image">
 
-        <form method = "post" action ="" enctype="multipart/form-data" id="formProd"> 
+        <form method = "post" action ="core/imagem_repositorio.php" enctype="multipart/form-data" id="formProd"> 
             <div class="containerimg">
                 <input type="file" id="file-input" name='imagens[]' accept="image/png, image/jpeg, imagem/jpg" onchange="preview()" multiple>
                 <label for="file-input">

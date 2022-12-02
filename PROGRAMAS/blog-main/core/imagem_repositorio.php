@@ -30,14 +30,14 @@ switch($acao){
     case 'insert':
         //caso seja para inserir novo dados
         //função sql.php
-        if($error){
+        function enviarImagem($error, $name, $tmp_name):string {
+            include ('conexao.php');
+        
+            if($error){
             die("falha ao enviar arquivo");
             }
-            if($size > 2097152)
-                die('arquivo muito grande!! Max: 2MB');
             
-            $pasta = '..imagens/';
-            $nomeImagem = $imagem_name;
+            $pasta = 'ImagensProdutos/';
             $novoNomeImagem = uniqid();
             $extensao = strtolower(pathinfo($nomeImagem, PATHINFO_EXTENSION));
             
@@ -45,13 +45,21 @@ switch($acao){
                 die("Tipo de arquivo não aceito");
             
             
-            $Imagem_arq = $pasta . $novoNomeImagem. "." . $extensao;
-        
+                $imagem_arq = $pasta . $novoNomeImagem. "." . $extensao;
 
+            return $imagem_arq;
+        }
+        if (isset($_FILES['imagens'])){
+            $imagens = $_FILES['imagens'];
+            //array imagens = recebe as imagens
+            $tudo_certo= true;
+            foreach($imagens['name'] as $arq => $img) {
+                $imagens_arqs[] = enviarImagem($imagens['error'][$arq], $imagens['name'][$arq], $imagens["tmp_name"][$arq]);
+            }
+        foreach($imagens_arqs as $arq => $img)
         $dados = [
             'Imagem_arq' => $Imagem_arq,
             'descricaoImg' => $descricaoImg,
-            'imagem_name' => $imagem_name,
             //'data_postagem' => "$data_postagem $hora_postagem",
         ];
     
@@ -59,6 +67,7 @@ switch($acao){
             'Imagem',
             $dados
         );
+    }
         //função (Mysql.php) 'insere' parâmetros: string 'post' (tabela), array $dados;
         //function insere(string $entidade, array $dados) : bool 
 

@@ -94,7 +94,7 @@ h2{
     border-color:rgb(0, 134, 255);
     border-style: solid;
     border-radius: 6px;
-    padding: 1px;
+    padding: 2px;
     width: 220px;
     height: 180px;
     -webkit-box-align: center;

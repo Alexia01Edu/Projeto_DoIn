@@ -39,7 +39,7 @@
             </div>
 
             <input type="file" id="flImage" name="fImage" accept="image/*">
-    </form>
+        </form>
     </div>
 
         <div class="form">

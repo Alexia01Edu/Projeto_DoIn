@@ -49,13 +49,23 @@ session_start();
                             $criterio,
                             'dataValidade ASC'
                         );
+                        function postiit(array $entidade): string
+                        {
+                            if($entidade['modoOperacao']=='Troca'){
+                                $src = 'lib/img/Amarelo.jpg';
+                            }
+                            if($entidade['modoOperacao']=='Doaçao'){
+                                $src = 'lib/img/Verde.jpg';
+                            }
+                            return $src;
+                        }
                     //https://html-css-js.com/css/generator/box-shadow/
                       foreach($result as $entidade) : 
-     
+
                     ?>
                 <div class="p1">
                     <div class="postit">  
-                        <img src="lib/img/azul.jpg" alt="" id="img"><h2><?php echo $entidade['modoOperacao']?></h2>
+                        <img src="<?php echo postiit($entidade); ?>" alt="" id="img"><h2><?php echo $entidade['modoOperacao']?></h2>
                     </div>
                     <div class="card" >
                     <a href="Pagina_Produto.php?id=<?php echo $entidade['produtoID'] ?>" class="link efeitos">

@@ -11,7 +11,7 @@ function enviarImagem($error, $size, $name, $tmp_name) {
     if($size > 2097152)
         die('arquivo muito grande!! Max: 2MB');
     
-    $pasta = 'past_arquivos/';
+    $pasta = 'core/ImagensProdutos/';
     $nomeImagem = $name;
     $novoNomeImagem = uniqid();
     $extensao = strtolower(pathinfo($nomeImagem, PATHINFO_EXTENSION));
@@ -41,12 +41,6 @@ if (isset($_FILES['imagens'])){
         if(!$deu_certo)
             $tudo_certo = false;
     }
-
-    if($tudo_certo)
-        echo "todos os aquivos foram enviados";
-    
-    else 
-        echo "falha no envio dos arquivos";
 }
 ?>
 <!DOCTYPE html> 

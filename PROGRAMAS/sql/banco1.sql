@@ -19,7 +19,7 @@ create table usuario (
     dataNasc 		    date	        not null,
     dataCriacao         datetime        not null default current_timestamp,
     telefone	        varchar(25)		not null,
-    imagemPerfil        varchar(255)    null,
+    imagemPerfil        varchar(255)    null default 'core/ImagemPerfil/Rosa.jpg',
     quantDoar           int             not null default '0',
     quantTrocar         int             not null default '0',
     primary key (usuarioID)

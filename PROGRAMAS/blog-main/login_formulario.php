@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login | Projeto para Web com PHP</title>
-        <link rel="stylesheet" href="lib/css/login.css">
+        <link rel="stylesheet" href="lib/css/Formularios/login.css">
     </head>
     <body>
     <div id="posicao">

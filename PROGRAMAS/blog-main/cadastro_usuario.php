@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lib/css/style_usuario.css">
+    <link rel="stylesheet" href="lib/css/Formularios/formularios.css">
+    <link rel="stylesheet" href="lib/css/Formularios/exclusivoUsuario.css">
     <title>Formulário</title>
 </head>
 
@@ -27,16 +28,27 @@
         </div>
     </div>
     <div class="container">
-        <div class="form-image">
-            <img src="lib/img/cadastro_usuario.png" alt="">
-        </div>
+    
+    <div class="form-image">
+        <form method = "post" action ="" enctype="multipart/form-data" id="formProd">
+            <div class="max-width">
+                <p>Escolha sua foto de Perfil</p> 
+                <div class="imageContainer">
+                <img src="lib/img/camera.png" alt="Selecione uma imagem" id="imgPhoto">
+                </div>
+            </div>
+
+            <input type="file" id="flImage" name="fImage" accept="image/*">
+        </form>
+    </div>
+
         <div class="form">
             <form method="post" action="core/usuario_repositorio.php" id="formUsuario">
             <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
                 <div class="input-group">
                     <div class="input-box">
                         <label for="NomeC">Nome Completo</label>
-                        <input id="NomeC" type="text" name="nome" placeholder="Digite seu primeiro nome" required>
+                        <input id="NomeC" type="text" name="nome" placeholder="Digite seu nome" required>
                     </div>
 
                     <div class="input-box">
@@ -63,31 +75,26 @@
                         <input id="senha" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
-
-                    <div class="input-box">
-                        <label for="confirmar">Confirme sua Senha</label>
-                        <input id="confirmar" type="password" name="senha" placeholder="Digite sua senha novamente" required>
-                    </div>
                 </div>
                 </div>
 
-                <div class="gender-inputs">
-                    <div class="gender-title">
+                <div class="radio-inputs">
+                    <div class="radio-title">
                         <h6>Gênero</h6>
                     </div>
 
-                    <div class="gender-group">
-                        <div class="gender-input">
+                    <div class="radio-group">
+                        <div class="radio-input">
                             <input id="Feminino" type="radio" name="genero" value="Feminino">
                             <label for="Feminino">Feminino</label>
                         </div>
 
-                        <div class="gender-input">
+                        <div class="radio-input">
                             <input id="Masculino" type="radio" name="genero" value="Masculino">
                             <label for="Masculino">Masculino</label>
                         </div>
 
-                        <div class="gender-input">
+                        <div class="radio-input">
                             <input id="Outros" type="radio" name="genero" value="Outros">
                             <label for="Outros">Outros</label>
                         </div>
@@ -100,8 +107,9 @@
     <div class="continue-button">
         <button type="submit" form="formUsuario"><a href="Ranking.php">Continuar</a> </button>
     </div>
-
 </div>
+<script src="lib/js/cad_imgPerfil.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 </body>
 
 </html>

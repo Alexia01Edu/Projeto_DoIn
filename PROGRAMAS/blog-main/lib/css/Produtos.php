@@ -31,8 +31,8 @@ body{
     margin-bottom: 10px;
     margin-top: 10px;
     margin-left: 6px;
-    width: 255px;
-    height: 340px;
+    width: 236px;
+    height: 320px;
     display:inline-block;
     position: relative;
 }
@@ -99,7 +99,7 @@ h2{
     border-style: solid;
     border-radius: 6px;
     padding: 2px;
-    width: 240px;
+    width: 220px;
     height: 200px;
     -webkit-box-align: center;
     align-items: center;

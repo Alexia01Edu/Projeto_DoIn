@@ -37,7 +37,10 @@
         ['*',
         '(select nome
             from categoria
-            where categoriaID = Produto.fk_categoria) as categoria'],
+            where categoriaID = Produto.fk_categoria) as categoria',
+         '(SELECT Imagem_arq  
+            FROM Imagem WHERE fk_produto = produtoID  
+            LIMIT 1) as imagem_arq'],
         $Prod
         );
         $tam = count($imagens);
@@ -48,7 +51,7 @@
             <div id="nome">
                 <h3><?php echo $Produto['nome_prod']?></h3>
             </div>   
-        <div class="card" > 
+        <div class="card"> 
 
             <div class="slide">
                 
@@ -57,25 +60,19 @@
                     <?php for($i=1; $i<=$tam; $i++):?>
                     <input type="radio" name="slide" id="<?php echo 'btn'.$i?>"<?php if($i==1){echo 'checked';}?>>
                     <?php endfor; ?>
-
-                
-                    <?php $i=1; foreach($imagens as $imagem):?>
-                    <div class="imagem <?php if($i==1){echo ' first';}?>">
-                    <?php $i++?>  
-                    <img src="<?php echo $imagem['Imagem_arq']?>" alt="" class="img">
+  
+                    <div class="imagem">
+                    <img src="<?php echo $Produto['imagem_arq']?>" alt="" class="img" id="img">
                     </div>
-                    <?php endforeach;?>
 
                 </div>
 
                     <div class="navega">
                         <div class="lista">
                             <?php $i=1; foreach($imagens as $imagem):?>
-                            <label for="<?php echo 'btn'.$i?>" class="barra">  
-                            <?php $i++?>    
-                                <div class="envoltorio">
+                            <label for="<?php echo 'btn'.$i?>" class="barra envoltorio" id="<?php echo "img".$i?>" onclick="myFunction(this.id)">      
                                 <img src="<?php echo $imagem['Imagem_arq']?>" alt="" class="imagens">
-                                </div>
+                                <?php $i++?>
                             </label>
                             <?php endforeach;?>
                         </div>
@@ -111,6 +108,8 @@
         </div>
         <?php endforeach;?>
     </div>
+    <script src="lib/js/PagProd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     </body>
 </html>
 

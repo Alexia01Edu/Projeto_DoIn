@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    display: block;
 }
 .containerimg{
     /*background-color: #ffffff;*/
@@ -132,6 +133,7 @@ figcaption{
     box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
   }
   #text-input {
+    width: 100%;
     margin-top: 10px;
     border: 1px solid #dddddd;
     padding: 20px;

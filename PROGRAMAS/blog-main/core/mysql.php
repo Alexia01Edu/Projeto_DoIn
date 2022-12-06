@@ -120,7 +120,6 @@ function insere(string $entidade, array $dados) : bool
 
     desconecta($conexao);
     //função que desconecta o canco de dados, armazenado, na variavel $conexao
-
     return $retorno;
     //retorna uma variavel bollean caso ?
 }

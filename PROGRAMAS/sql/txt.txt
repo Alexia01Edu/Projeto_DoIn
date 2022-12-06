@@ -5,12 +5,76 @@ values
 (9,'Esporte'),(10,'Eletrônicos'),(11,'Pet (Animais)'),
 (12, 'Pet (Produtos)');
 
+-- Usuarios
+
 INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone)
-VALUES('ze', 'z@gmail.com', 123, 'feminino','62636391304','2020-02-23', '(12) 99176-5162');   
+VALUES('Ze', 'z@gmail.com', 123, 'Masculino','34986426931','1989-03-23', '(48) 2774-2423');  
+
+INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone)
+VALUES('Alice', 'a@gmail.com', 234, 'Feminino','98230037779','1969-02-15', '(21) 3641-8420');  
+
+INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone)
+VALUES('Bruna', 'b@gmail.com', 345, 'Feminino','52838470809','2002-12-03', '(18) 3491-2866');  
+
+INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone)
+VALUES('Pedro', 'p@gmail.com', 456, 'Masculino','14810245667','1994-08-08', '(31) 3704-5016');  
+
+    
+-- Produtos
+
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
+VALUES('Doa-se cacho de Banana', 'Banana', 1, 'Doação','2023-02-23', 'Santa Catarina', 'Florianópolis', 7, 1);
+
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
+VALUES('Caixa com Produtos de Beleza da Avon, troca-se por outros de diferentes marcas', 'Produtos de Beleza da Avon', 6, 'Doação','2024-05-9', 'Rio Janeiro', 'Rio Janeiro', 1, 2);
+
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
+VALUES('Doa-se Cachorra caramelo, vacinada e vermifugada', 'Cachorra Caramelo', 1, 'Doação','2023-02-23', 'São Paulo', 'Guarulhos', 11, 3);
+
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
+VALUES('Doa-se duas cesta de alimento, uma caixa de leite e alguns Produtos de higiene', 'Mantimentos', 4, 'Doação','2023-05-9', 'Minas Gerais', 'Belo Horizonte', 7, 4);
     
 INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
-VALUES('assim', 'Cachorrinho', 8, 'Troca','2020-02-23', 'SP', 'Birigui', 1, 1);
+VALUES('Doa-se Filhotes de cachorro de 2 meses, 2 femêas e 4 machos', 'Filhotinhos de Cachorro', 6, 'Doação','2023-01-5', 'São Paulo', 'Guarulhos', 11, 3);
 
 INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
-VALUES('desse jeito', 'Gato', 3, 'Doaçao','2020-02-23', 'RJ', 'Rio Janeiro', 1, 1);
+VALUES('Doa-se Filhotes de Gato de 1 mês, 5 femêas e 3 machos', 'Filhotinhos de Gato', 8, 'Doação','2023-02-14', 'São Paulo', 'Guarulhos', 11, 3);
 
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
+VALUES('Cesta de Goiaba, troca-se por galinhas', 'Cesta de Goiaba', 1, 'Troca','2023-02-9', 'Santa Catarina', 'Florianópolis', 7, 1);
+
+INSERT INTO Produto(descricao, nome_prod, quant, modoOperacao, dataValidade, estado, cidade, fk_categoria, fk_usuario) 
+VALUES('Duas cestas de Maçãs, uma de Maçãs vermelhas e a outra de verdes, recem colhidas', 'Caixas de Maçãs', 2, 'Troca','2022-02-10', 'Minas Gerais', 'Belo Horizonte', 7, 1);
+
+
+-- Imagens
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/Banana.jpg', 1);   
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/belezaProd.jpg', 2);   
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/Cachorro.jpg', 3);   
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/cestaBasica.jpg', 4);
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/FilhotesCachorrinho.jpg', 5);   
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/gatinhos.jpg', 6);   
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/Goiaba.jpg', 7);   
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/Goiaba2.jpg', 7);
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/Goiaba3.jpg', 7);
+
+INSERT INTO Imagem(Imagem_arq, fk_produto)
+VALUES('core/ImagensProdutos/Maçãs.jpg', 8);

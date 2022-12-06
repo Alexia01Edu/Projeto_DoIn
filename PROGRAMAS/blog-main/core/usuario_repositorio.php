@@ -6,31 +6,39 @@
  require_once 'mysql.php';
  $salt = '$exemplosaltifsp';
 
- foreach($_POST as $indice => $dado) {
-     $$indice = limparDados($dado);
- }
+ foreach($_POST as $indice => $dado){
+ 
+        $$indice = $dado;
+    }
+    
+    foreach($_GET as $indice => $dado){
 
- foreach($_GET as $indice => $dado) {
-     $$indice = limparDados($dado);
- }
+        $$indice = $dado;
+}
 
  switch($acao) {
-     case 'insert':
-         $dados = [
-            'nome' => $nome,
-            'email' => $email,
-            'senha' => crypt($senha,$salt),
-           //senha fica cripytografada
-            'genero'=> $genero,
-            'cpf' => $cpf,
-            'dataNasc' => $dataNasc,
-            'telefone' => $telefone,
-         ];
 
-         insere(
-             'usuario',
-             $dados
-         );
+     case 'insert':
+        $imagem = $_FILES['imagemP'];
+        $pasta = "ImagemPerfil/";
+        $nomeImagem = $imagem['name'];
+        $novoNomeImagem = uniqid();
+        $extensao = strtolower(pathinfo($nomeImagem, PATHINFO_EXTENSION));
+
+        if(move_uploaded_file( $imagem['tmp_name'], $pasta.$novoNomeImagem.'.'.$extensao)){
+          $imagemPerfil ='core/'.$pasta.$novoNomeImagem.'.'.$extensao;
+      }
+    
+    else{
+        $imagemPerfil ='core/ImagemPerfil/Rosa.jpg';
+    }
+    echo $imagemPerfil;
+         
+    $sql = "INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone,imagemPerfil)
+    VALUES(' ". $nome ." ',' ". $email ." ',' ". crypt($senha,$salt) ." ',' ". $genero ." ',' ". $cpf ."',' ". $dataNasc ." ',' ". $telefone ."',' ". $imagemPerfil ." ')";  
+
+    $conexao = conecta();
+    $resultado = mysqli_query( $conexao, $sql);
 
          break;
      case 'update':

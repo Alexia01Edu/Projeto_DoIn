@@ -17,6 +17,7 @@
     <title>Formulário</title>
 </head>
 <body>
+
 <div id="posicao">
 <div class="form-header">
         <div class="title">
@@ -28,9 +29,12 @@
 </div>
     <div class="container">
         <!--Cadastro de imagens-->
+        
         <div class="form-image">
 
-        <form method = "post" action ="core/imagem_repositorio.php" enctype="multipart/form-data" id="formProd"> 
+        <form method = "post" action ="" enctype="multipart/form-data" id="formProd"> 
+        <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
+           
             <div class="containerimg">
                 <input type="file" id="file-input" name='imagens[]' accept="image/png, image/jpeg, imagem/jpg" onchange="preview()" multiple>
                 <label for="file-input">
@@ -39,20 +43,12 @@
                 <p id="num-of-files">No Files Chosen</p>
                 <div id="images"></div>
             </div>
-
-            <div class="input-box">
-                <label for="titulo" id="d-img">Descrição para as imagens</label>
-                <textarea type="text" require="required" id="descricaoImg" name="descricaoImg" 
-                placeholder="essa imagem mostra os filhotes de cachorros labrador que eu quero Doar/Trocar"rows="3"> </textarea>
-            </div>
         </form>
         </div>
 
         <!--final-->
         <div class="form">
-            
-            <form method="post" action="core/produto_repositorio.php" id="formProd">
-
+        <form method="post" action="core/produto_repositorio.php" id="formProd">
             <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
 
                 <div class="input-group">
@@ -220,14 +216,14 @@
                             <label for="foreColor">Font Color</label>
                             </div>
                             </div>
-                        <div id="text-input" contenteditable="true"></div>
+                        <textarea name ='descricao' id="text-input" contenteditable="true"></textarea>
                     </div>
                 </br>
             </form>
         </div>
     </div>
     <div class="continue-button" >
-        <button type="submit" form="formProd"><a href="#">Continuar</a> </button>
+        <button type="submit" form="formProd"><a href="index.php">Continuar</a> </button>
     </div>
 </div>
 <script src="lib/js/cadastroProd.js"></script>

@@ -13,10 +13,7 @@
 
 <body>
    <?php
-    /*require_once 'includes/funcoes.php';
-    require_once 'core/conexao_mysql.php';
-    require_once 'core/sql.php';
-    require_once 'core/mysql.php';*/
+      
     ?>
     <div id="posicao">
     <div class="form-header">
@@ -24,13 +21,13 @@
             <h1>Cadastre-se</h1>
         </div>
         <div class="login-button">
-            <button><a href="#">Entrar</a></button>
+            <button><a href="login_formulario">Entrar</a></button>
         </div>
     </div>
     <div class="container">
-    
-    <div class="form-image">
-        <form method = "post" action ="" enctype="multipart/form-data" id="formProd">
+    <form method = "post" action ="core/usuario_repositorio.php" enctype="multipart/form-data"  id="formUsuario">
+    <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
+        <div class="form-image">
             <div class="max-width">
                 <p>Escolha sua foto de Perfil</p> 
                 <div class="imageContainer">
@@ -38,13 +35,10 @@
                 </div>
             </div>
 
-            <input type="file" id="flImage" name="fImage" accept="image/*">
-        </form>
-    </div>
+            <input type="file" id="flImage" name="imagemP" accept="image/*">
+        </div>
 
         <div class="form">
-            <form method="post" action="core/usuario_repositorio.php" id="formUsuario">
-            <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
                 <div class="input-group">
                     <div class="input-box">
                         <label for="NomeC">Nome Completo</label>
@@ -72,7 +66,7 @@
 
                     <div class="input-box">
                         <label for="senha">Senha</label>
-                        <input id="senha" type="password" name="password" placeholder="Digite sua senha" required>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
 
                 </div>

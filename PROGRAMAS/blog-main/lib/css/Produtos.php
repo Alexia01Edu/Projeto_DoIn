@@ -1,10 +1,16 @@
 <?php header("Content-type: text/css");?>
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
 body{
     padding: 0%;
     margin: 0%;
     font-size:30px;
-    font-family: Tahoma, Geneva, sans-serif;
 }
 #prop{
     float: left;
@@ -22,15 +28,20 @@ body{
     padding-top: 10px;
 }
 .p1{
+    margin-bottom: 10px;
     margin-top: 10px;
-    margin-left: 8px;
-    width: 250px;
+    margin-left: 6px;
+    width: 255px;
     height: 340px;
     display:inline-block;
     position: relative;
 }
 .card{
+    border: 0px solid #FFFFFF;
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
     object-fit: contain;
+    padding-right: 4px;
     width: 97%;
     height: 100%;
     font-size:50%;
@@ -42,8 +53,8 @@ body{
     display: flex;
     border-radius: 6px;
     padding: 6px;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
@@ -52,9 +63,8 @@ body{
     position: absolute;
     z-index: 1;
     right: 0%;
-    -webkit-box-shadow: -3px 4px 5px 3px rgba(0,0,0,0.29);
--moz-box-shadow: -3px 4px 5px 3px rgba(0,0,0,0.29);
-box-shadow: -3px 4px 5px 3px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 2px -2px 15px 6px rgba(0,0,0,0.16); 
+    box-shadow: 2px -2px 15px 6px rgba(0,0,0,0.16);
 }
 
 #img{
@@ -69,34 +79,28 @@ h2{
     font-size:14px;
 }
 .link{
-    border: 0px solid #FFFFFF;
-    border-radius: 12px;
     position: relative;
-    padding: 6px;
-    padding-bottom:1px ; 
-    background-color: rgb(255, 255, 255);
+    padding: 4px;
     grid-template-rows: auto auto 1fr;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 .efeitos{
-    transition: box-shadow 0.4s ease 0s;
     text-decoration: none;
     cursor: pointer;
     overflow: hidden;
 }
 .envoltorio{
-    margin-left: auto;
-    margin-right: auto;
+    background-color: Lavender;
     display: flex;
     border-width: 1px;
     border-color:rgb(0, 134, 255);
     border-style: solid;
     border-radius: 6px;
     padding: 2px;
-    width: 220px;
-    height: 180px;
+    width: 240px;
+    height: 200px;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
@@ -112,7 +116,8 @@ img{
 }
 
 .info{
-    padding: 2px;
+    padding: 3px;
+    line-height: 2.0;
 }
 
 h3{

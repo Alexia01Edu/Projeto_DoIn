@@ -19,7 +19,7 @@ create table usuario (
     dataNasc 		    date	        not null,
     dataCriacao         datetime        not null default current_timestamp,
     telefone	        varchar(25)		not null,
-    imagemPerfil        varchar(255)    null default 'core/ImagemPerfil/Rosa.jpg',
+    imagemPerfil        varchar(255)    null,
     quantDoar           int             not null default '0',
     quantTrocar         int             not null default '0',
     primary key (usuarioID)
@@ -52,7 +52,6 @@ create table usuario (
 	imagemID			int 		    not null auto_increment,
     Imagem_arq          varchar(255)    not null,
     dataImg 		    datetime        not null default current_timestamp,
-    descricaoImg	    varchar(30)		null,
     fk_produto 		    int         	not null,
     primary key (imagemID),
     foreign key (fk_produto) references Produto (produtoID) on delete cascade on update cascade

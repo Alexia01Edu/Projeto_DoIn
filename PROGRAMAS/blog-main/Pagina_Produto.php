@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +12,6 @@ session_start();
     </head>
     <body>  
         <?php  
-        /*
-        require_once 'Produtos.php';
         require_once 'includes/funcoes.php';
         require_once 'core/conexao_mysql.php';
         require_once 'core/sql.php';
@@ -26,83 +22,94 @@ session_start();
         }
 
         $id = (int)$_GET['id'];
-        
-        $criterio1 = ['fk_produto', '=', $id];
+ 
+        $img[] = ['fk_produto', '=', $id];
         $imagens = buscar (
             'Imagem',
             ['*'],
-            $criterio1
+            $img
         );
 
-        $criterio2 = ['produtoID', '=', $id];
+        $Prod[] = ['produtoID', '=', $id];
 
-        $Produto = buscar (
+        $result = buscar (
         'Produto',
         ['*',
         '(select nome
             from categoria
             where categoriaID = Produto.fk_categoria) as categoria'],
-        $criterio2
+        $Prod
         );
         $tam = count($imagens);
-        */?>
-
+        ?>
     <div id="main" >
-    <div class="p1">
-        <div id="nome">
-            <h3>nome do produto</h3>
-        </div>   
-    <div class="card" > 
-    
-        <div class="imagem">               
-        <img src="" alt=""> 
-        </div> 
-    <div class="navega">
-        <div class="lista">
+    <?php foreach($result as $Produto):?>
+        <div class="p1">
+            <div id="nome">
+                <h3><?php echo $Produto['nome_prod']?></h3>
+            </div>   
+        <div class="card" > 
 
-            <div class="btn">
-            <?php //for($i=1; $i<=5; $i++)?>
-            <input type="radio" id="<?php //echo 'btn'.$i?>">
-            <?php //endfor; ?>
-            </div>
+            <div class="slide">
+                
+                <div class="slides">
 
-            <div class="envoltorio">
-                <img src="lib/img/GPS_Icon.png" alt="" class="imagens">
-            </div>
+                    <?php for($i=1; $i<=$tam; $i++):?>
+                    <input type="radio" name="slide" id="<?php echo 'btn'.$i?>"<?php if($i==1){echo 'checked';}?>>
+                    <?php endfor; ?>
 
-        </div>
-        
-        <div class="labels">
-            <?php //for($i=1; $i<=5; $i++)?>
-                <label for="<?php //echo 'btn'.$i?>"></label>
-            <?php //endfor; ?>
-        </div>
-    </div>        
+                
+                    <?php $i=1; foreach($imagens as $imagem):?>
+                    <div class="imagem <?php if($i==1){echo ' first';}?>">
+                    <?php $i++?>  
+                    <img src="<?php echo $imagem['Imagem_arq']?>" alt="" class="img">
+                    </div>
+                    <?php endforeach;?>
+
+                </div>
+
+                    <div class="navega">
+                        <div class="lista">
+                            <?php $i=1; foreach($imagens as $imagem):?>
+                            <label for="<?php echo 'btn'.$i?>" class="barra">  
+                            <?php $i++?>    
+                                <div class="envoltorio">
+                                <img src="<?php echo $imagem['Imagem_arq']?>" alt="" class="imagens">
+                                </div>
+                            </label>
+                            <?php endforeach;?>
+                        </div>
+                    </div>
+                
+            </div>        
                 <div id="infoProd">
 
-                    <strong class="transacao">Troca, doacao</strong><br>
+                    <strong class="transacao"><?php echo $Produto['modoOperacao']?></strong><br>
                                 
-                        <a href="Produtos.php?categoria=<?php echo $Produto['fk_categoria']?>">categoria</a><br>
+                        <a href="Produtos.php?categoria=<?php echo $Produto['fk_categoria']?>"><?php echo $Produto['categoria']?></a><br>
                        
-                        <span> Data de validade: <strong>12/30/3409</strong></span>
+                        <span> Data de validade: <strong><?php echo $Produto['dataValidade']?></strong></span>
                                
                     
-                        <p>Quantidade:</p>
+                        <p>Quantidade:<?php echo $Produto['quant']?></p>
 
-                        <img width="20" height="30" src="lib/img/GPS_Icon.png" alt=""><span>Cidade, Estado</span><br>
+                        <img width="20" height="30" src="lib/img/GPS_Icon.png" alt=""><span><?php echo $Produto['cidade']?>, <?php echo $Produto['estado']?></span><br>
 
-                    <span>Compartilhe este produto:</span> <br>
+                    <span>Compartilhe este produto:</span>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/Projeto_Doin/PROGRAMAS/blog-main/Pagina_Produto.php" target="_blank">
 	                <img width="25" height="25" src="https://ayltoninacio.com.br/img/s/18w50.jpg" alt="Compartilhe no Facebook" class="share"> </a>
                     <a href="https://api.whatsapp.com/send?text=http://localhost/Projeto_Doin/PROGRAMAS/blog-main/Pagina_Produto.php" target="_blank">
 	                <img width="25" height="25" src="https://ayltoninacio.com.br/img/s/20w50.jpg" alt="Compartilhe no WhatsApp" class="share"></a>
+
+                    <button>Contato do Fornecedor</button>
                 </div>
            </div>
         </div> 
         <div class="descricao">
             <h1>Descrição do Produto</h1>
-                <div>A descrição é a enumeração das características próprias dos seres, coisas, cenários, ambientes, costumes, impressões etc. A visão, o tato, a audição, o olfato e o paladar constituem a base da descrição.</div>
+                <div class="conteudo"><?php echo $Produto['descricao']?></div>
         </div>
+        <?php endforeach;?>
     </div>
     </body>
 </html>

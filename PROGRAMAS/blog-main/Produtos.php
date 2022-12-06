@@ -1,6 +1,6 @@
 <?php
 session_start();
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +31,6 @@ session_start();
                         if(!empty($busca)) {
                             $criterio[] = ['nome', 'like', "%{$busca}%"];
                         }
-
                         
 
                         $result = buscar(
@@ -44,7 +43,10 @@ session_start();
                                 'modoOperacao',
                                 'dataValidade',
                                 'estado',
-                                'cidade'
+                                'cidade',
+                                '(SELECT Imagem_arq  
+                                FROM Imagem WHERE fk_produto = produtoID  
+                                LIMIT 1) as imagem_arq'
                             ],
                             $criterio,
                             'dataValidade ASC'
@@ -54,8 +56,8 @@ session_start();
                             if($entidade['modoOperacao']=='Troca'){
                                 $src = 'lib/img/Amarelo.jpg';
                             }
-                            if($entidade['modoOperacao']=='Doaçao'){
-                                $src = 'lib/img/Verde.jpg';
+                            if($entidade['modoOperacao']=='Doação'){
+                                $src = 'lib/img/verde.jpg';
                             }
                             return $src;
                         }
@@ -69,9 +71,8 @@ session_start();
                     </div>
                     <div class="card" >
                     <a href="Pagina_Produto.php?id=<?php echo $entidade['produtoID'] ?>" class="link efeitos">
-                   
                     <div class="envoltorio">
-                    <img src="lib/img/cadastro_produto.png" alt="">
+                    <img src="<?php echo $entidade['imagem_arq'] ?>" alt="">
                     </div>
                     <div class="info">
                         <h3><?php echo $entidade['nome_prod']?></h3>

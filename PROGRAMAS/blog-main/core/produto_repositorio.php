@@ -7,29 +7,22 @@ require_once 'sql.php';
 require_once 'mysql.php';
 
 foreach($_POST as $indice => $dado){
-//Valores que chegam pelo método $_POST 
-//enquanto percorre a array $_POST, também  pega o valor da sua chave.
-//Um valor é pego a cada repetição ou iteração.
+
     $$indice = limparDados($dado);
-//função limparDados, retira tags indesejadas
-// A variavel indice, tem nome variavel, ou seja, o nome mude muda acada iteração
-//o valor de $dado sera o nome do $indice 
+
 }
 
 foreach($_GET as $indice => $dado){
-//Valores que chegam pelo método $_GET 
-//enquanto percorre a array $_GET, também  pega o valor da sua chave.
-//Um valor é pego a cada repetição ou iteração.
+
     $$indice = limparDados($dado);
 }
 
-$id = (int)$id;
-// Pegar o id transformar em int e armazenar em id 
 switch($acao){
     //switch - função de repetição
     case 'insert':
-        //caso seja para inserir novo dados
-        //função sql.php
+
+        $nome = $nome_prod;
+        $des = $descricao;
         $dados = [
             'nome_prod' => $nome_prod,
             'descricao' => $descricao,
@@ -42,15 +35,20 @@ switch($acao){
             //'data_postagem' => "$data_postagem $hora_postagem",
             'fk_usuario' => $_SESSION ['login'] ['usuario'] ['usuarioID']
         ];
-
-        insere(
+        
+      insere(
             'Produto',
             $dados
         );
-        //função (Mysql.php) 'insere' parâmetros: string 'post' (tabela), array $dados;
-        //function insere(string $entidade, array $dados) : bool 
-
-        break;
+        
+        $idProd = buscar(
+            'Produto',
+            ['produtoID'],
+            [['nome_prod', '=', $nome,
+              'descricao', '=', $des]],
+              'LIMIT 1'
+            );
+        echo $idProd;
 
         case 'update':
             //caso seja para atualizar dados existentes
@@ -94,5 +92,5 @@ switch($acao){
                 break;
 
     }
-    header('Location: ../index.php');  
+    //header('Location: ../index.php');  
 ?>

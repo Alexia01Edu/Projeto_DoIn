@@ -33,7 +33,7 @@
 
                     <div class="input-box">
                         <label for="senha">Senha</label>
-                        <input id="senha" type="password" name="password" placeholder="Digite sua senha" required>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
                 </div>
                 </div>

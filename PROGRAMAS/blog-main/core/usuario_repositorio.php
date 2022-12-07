@@ -39,7 +39,9 @@
 
     $conexao = conecta();
     $resultado = mysqli_query( $conexao, $sql);
-
+    
+    desconecta($conexao);
+    
          break;
      case 'update':
          $id = (int)$id;
@@ -59,7 +61,9 @@
          );
 
          break;
+
      case 'login':
+        
         //se input name='login' então 
          $criterio = [
              ['email', '=', $email]            
@@ -69,7 +73,7 @@
 
          $retorno = buscar(
              'usuario',
-             ['usuarioID', 'nome','email','senha'],
+             ['usuarioID','nome','email','senha'],
              $criterio
          );
          //a função buscar, verifica na tabela usuario se aquele usuario existe;
@@ -139,7 +143,7 @@
          exit;
          break;
  }
- header('Location: ../index.php');
+ header('Location: ../Produtos.php');
 
  //http://localhost/blog/core/usuario_repositorio.php
 ?>

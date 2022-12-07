@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +9,9 @@ session_start();
         <link rel="stylesheet" href="lib/css/login.css">
     </head>
     <body>
-                <p><?php echo $_SESSION['fk_Produto']?></p>
+    <?php 
+                        include  'includes/topo.php' ;
+?>
                 <a href="cadastro_produto.php">cadastro produto</a>
                 <br>
                 <a href="cadastro_usuario.php">cadastro usuario</a>

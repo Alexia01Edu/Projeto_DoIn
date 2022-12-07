@@ -25,9 +25,9 @@
         </div>
     </div>
     <div class="container">
-    <form method = "post" action ="core/usuario_repositorio.php" enctype="multipart/form-data"  id="formUsuario">
-    <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
         <div class="form-image">
+            <form method = "post" action ="core/usuario_repositorio.php" enctype="multipart/form-data"  id="formUsuario">
+            <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
             <div class="max-width">
                 <p>Escolha sua foto de Perfil</p> 
                 <div class="imageContainer">

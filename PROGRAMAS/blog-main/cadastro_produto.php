@@ -23,17 +23,14 @@
         <div class="title">
             <h1>Cadastre seu produto</h1>
         </div>
-        <div class="login-button">
-            <button><a href="#">Entrar</a></button>
-        </div>
 </div>
     <div class="container">
         <!--Cadastro de imagens-->
         
         <div class="form-image">
 
-        <form method = "post" action ="" enctype="multipart/form-data" id="formProd"> 
-        <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
+        <form method = "post" action ="core/produto_repositorio.php" enctype="multipart/form-data" id="formProd"> 
+        <input type="hidden" name="acao" value="<?php echo 'insert'?>">
            
             <div class="containerimg">
                 <input type="file" id="file-input" name='imagens[]' accept="image/png, image/jpeg, imagem/jpg" onchange="preview()" multiple>
@@ -43,14 +40,10 @@
                 <p id="num-of-files">No Files Chosen</p>
                 <div id="images"></div>
             </div>
-        </form>
         </div>
 
         <!--final-->
         <div class="form">
-        <form method="post" action="core/produto_repositorio.php" id="formProd">
-            <input type="hidden" name="acao" value="<?php echo 'insert' ?>">
-
                 <div class="input-group">
                     <div class="input-box">
                         <label for="name">Nome</label>

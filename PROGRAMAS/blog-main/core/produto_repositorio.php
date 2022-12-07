@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/valida_login.php';
+//require_once '../includes/valida_login.php';
 require_once '../includes/funcoes.php';
 require_once 'conexao_mysql.php';
 require_once 'sql.php';
@@ -8,47 +8,64 @@ require_once 'mysql.php';
 
 foreach($_POST as $indice => $dado){
 
-    $$indice = limparDados($dado);
+    $$indice = $dado;
 
 }
 
 foreach($_GET as $indice => $dado){
 
-    $$indice = limparDados($dado);
+    $$indice = $dado;
 }
 
 switch($acao){
-    //switch - função de repetição
-    case 'insert':
 
-        $nome = $nome_prod;
-        $des = $descricao;
-        $dados = [
-            'nome_prod' => $nome_prod,
-            'descricao' => $descricao,
-            'quant' => $quant,
-            'modoOperacao' => $modoOperacao,
-            'dataValidade' => $dataValidade,
-            'estado' => $estado,
-            'cidade' => $cidade,
-            'fk_categoria' => $fk_categoria,
-            //'data_postagem' => "$data_postagem $hora_postagem",
-            'fk_usuario' => $_SESSION ['login'] ['usuario'] ['usuarioID']
-        ];
+    case 'insert':
+ 
+
+        $sql = "INSERT INTO Produto(nome_prod, descricao, quant, modoOperacao, dataValidade, estado, cidade,fk_categoria, fk_usuario)
+        VALUES(' ". $nome_prod ." ',' ". $descricao ." ',' ". $quant ." ',' ". $modoOperacao ." ',' ". $dataValidade ."',' ". $estado ." ',' ". $cidade ."',' ". $fk_categoria ."',' ". $_SESSION ['login'] ['usuario'] ['usuarioID'] ." ')";  
         
-      insere(
-            'Produto',
-            $dados
-        );
-        
-        $idProd = buscar(
-            'Produto',
-            ['produtoID'],
-            [['nome_prod', '=', $nome,
-              'descricao', '=', $des]],
-              'LIMIT 1'
-            );
+        $conexao = conecta();
+        $resultado = mysqli_query($conexao,$sql);
+        $idProd=mysqli_insert_id($conexao);
         echo $idProd;
+
+        function enviarImagem($error, $name, $tmp_name){
+            include 'conexao_mysql.php';
+             
+             $pasta = 'ImagensProdutos/';
+             $nomeImagem = $name;
+             $novoNomeImagem = uniqid();
+             $extensao = strtolower(pathinfo($nomeImagem, PATHINFO_EXTENSION));
+             
+             if(move_uploaded_file( $tmp_name, $pasta.$novoNomeImagem.'.'.$extensao)){
+                $imagem_arq ='core/'.$pasta.$novoNomeImagem.'.'.$extensao;
+         
+                 $dados = [
+                     'Imagem_arq' => $imagem_arq,
+                     'fk_produto'=> $idProd
+                     //'data_postagem' => "$data_postagem $hora_postagem",
+                 ];
+                 insere(
+                     'Imagem',
+                     $dados,
+                     ''
+                 );
+             return true;
+         }
+             else{
+                 return false;
+             }
+         }
+         
+         if (isset($_FILES['imagens'])){
+             $imagens = $_FILES['imagens'];
+             //array imagens = recebe as imagens
+             foreach($imagens['name'] as $index => $img) {
+                 $imagens_arqs  = enviarImagem($imagens['error'][$index], $imagens['name'][$index], $imagens["tmp_name"][$index]);
+             }
+         }
+
 
         case 'update':
             //caso seja para atualizar dados existentes

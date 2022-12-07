@@ -39,14 +39,14 @@ body{
     font-size: 24px;
     text-transform: uppercase;
 }
-h3{
+.p1 h3{
     font-weight: normal;
 }
 .card{
     padding-top: 1%;
     padding-left: 1%;
     border: 3px solid black;
-    height: 690px;
+    height: 660px;
     display: flex;
     
 }
@@ -59,14 +59,14 @@ h3{
     margin-right: 0.5%;
 }
 .slide{
-    width: 58vw;
-    height: 500px;
+    width: 59vw;
+    height: 600px;
     display: flex;
 }
 .slides{
     background-color: lavender;
-    width:80%;
-    height: 500px;
+    width:85%;
+    height: 600px;
     display: flex;
     border: 1px solid black;
     border-radius: 6px;
@@ -76,8 +76,8 @@ h3{
     display: none;
 }
 .imagem{
-    width: 800px;
-    height: 500px;
+    width: 900px;
+    height: 600px;
     position: relative;
 }
 .imagem img{
@@ -87,7 +87,7 @@ h3{
 }
 
 .navega{
-    margin-left: 1%;
+    margin-left: 30px;
     margin-top: 1%;
 }
 .lista{
@@ -128,7 +128,7 @@ h3{
     margin-left: 2%;
     font-size: 18px;
 }
-a{
+#infoProd a{
     text-decoration: none;
 }
 .share{
@@ -149,6 +149,12 @@ a{
     text-indent: 3%;
     margin-top: 20px;
     line-height: 1.5;
+}
+
+.semelhantes{
+    height: auto;
+    padding: 3px;
+    position: relative;   
 }
 
 @media screen and (max-width:980px) {

@@ -22,7 +22,7 @@
         <div class="form">
             <form method="post" action="core/usuario_repositorio.php" id="formUsuario">
             
-            <input type="hidden" name="acao" value="login">
+            <input type="hidden" name="acao" value="<?php echo 'login'?>">
                 <div class="input-group">
 
                     <div class="entrar">

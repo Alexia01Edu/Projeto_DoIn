@@ -9,6 +9,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuário | Projeto para Web com PHP</title>
         <link rel="stylesheet" href="lib/css/Produtos.php">
+        <link rel="stylesheet" href="lib/css/card_Prod.css">
         <script>
 
 </script>
@@ -35,15 +36,7 @@ session_start();
 
                         $result = buscar(
                             'Produto',
-                            [
-                                'produtoID',
-                                'descricao',
-                                'nome_prod',
-                                'quant',
-                                'modoOperacao',
-                                'dataValidade',
-                                'estado',
-                                'cidade',
+                            ['*',
                                 '(SELECT Imagem_arq  
                                 FROM Imagem WHERE fk_produto = produtoID  
                                 LIMIT 1) as imagem_arq'
@@ -62,30 +55,13 @@ session_start();
                             return $src;
                         }
                     //https://html-css-js.com/css/generator/box-shadow/
-                      foreach($result as $entidade) : 
-
+                      foreach($result as $entidade) : ?>
+                
+                
+                    <?php
+                        include 'includes/card_Prod.php';
                     ?>
-                <div class="p1">
-                    <div class="postit">  
-                        <img src="<?php echo postiit($entidade); ?>" alt="" id="img"><h2><?php echo $entidade['modoOperacao']?></h2>
-                    </div>
-                    <div class="card" >
-                    <a href="Pagina_Produto.php?id=<?php echo $entidade['produtoID'] ?>" class="link efeitos">
-                    <div class="envoltorio">
-                    <img src="<?php echo $entidade['imagem_arq'] ?>" alt="">
-                    </div>
-                    <div class="info">
-                        <h3><?php echo $entidade['nome_prod']?></h3>
-                        <div>
-                        <p>Unidades: <?php echo $entidade['quant']?></p>
-                        <p class="lugar"><?php echo $entidade['cidade']?>, <?php echo $entidade['estado']?></p>
-                        <span class="data">Data de validade: <?php echo $entidade['dataValidade']?></span>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 
             </div>
     </body>

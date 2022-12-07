@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuário | Projeto para Web com PHP</title>
         <link rel="stylesheet" href="lib/css/PaginaProd.css">
+        <link rel="stylesheet" href="lib/css/card_Prod.css">
         <script>
         </script>
     </head>
@@ -44,9 +45,11 @@
         $Prod
         );
         $tam = count($imagens);
+
         ?>
     <div id="main" >
-    <?php foreach($result as $Produto):?>
+    <?php foreach($result as $Produto): 
+        $cat = $Produto['fk_categoria'];?>
         <div class="p1">
             <div id="nome">
                 <h3><?php echo $Produto['nome_prod']?></h3>
@@ -102,11 +105,42 @@
                 </div>
            </div>
         </div> 
+        <?php endforeach;?>
+        <div class="semelhantes">
+             <?php
+                    function postiit(array $entidade): string
+                        {
+                            if($entidade['modoOperacao']=='Troca'){
+                                $src = 'lib/img/Amarelo.jpg';
+                            }
+                            if($entidade['modoOperacao']=='Doação'){
+                                $src = 'lib/img/verde.jpg';
+                            }
+                            return $src;
+                        }
+                    $categoria = buscar (
+                                        'Produto',
+                                        ['*',
+                                        '(SELECT Imagem_arq  
+                                            FROM Imagem WHERE fk_produto = produtoID  
+                                            LIMIT 1) as imagem_arq'],
+                                        [['fk_categoria', '=', $cat]]
+                                        );
+                foreach($categoria as $entidade) :?>
+                <?php
+                if($entidade['produtoID']!=$id){
+                    include 'includes/card_Prod.php';
+                }
+                ?>
+                 <?php   endforeach; ?>
+            
+        </div>
+        <?php foreach($result as $Produto):?>
         <div class="descricao">
             <h1>Descrição do Produto</h1>
                 <div class="conteudo"><?php echo $Produto['descricao']?></div>
         </div>
-        <?php endforeach;?>
+        <?php   endforeach; ?>
     </div>
     <script src="lib/js/PagProd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>

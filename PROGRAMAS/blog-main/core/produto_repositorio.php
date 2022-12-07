@@ -1,6 +1,6 @@
 <?php
 session_start();
-//require_once '../includes/valida_login.php';
+require_once '../includes/valida_login.php';
 require_once '../includes/funcoes.php';
 require_once 'conexao_mysql.php';
 require_once 'sql.php';
@@ -27,7 +27,6 @@ switch($acao){
         $sql = "INSERT INTO Produto(nome_prod, descricao, quant, modoOperacao, dataValidade, estado, cidade,fk_categoria, fk_usuario)
         VALUES(' ". $nome_prod ." ',' ". $descricao ." ',' ". $quant ." ',' ". $modoOperacao ." ',' ". $dataValidade ."',' ". $estado ." ',' ". $cidade ."',' ". $fk_categoria ."',' ". $_SESSION ['login'] ['usuario'] ['usuarioID'] ." ')";  
         
-        $conexao = conecta();
         $resultado = mysqli_query($conexao,$sql);
         $idProd=mysqli_insert_id($conexao);
         echo $idProd;

@@ -32,15 +32,20 @@
     else{
         $imagemPerfil ='core/ImagemPerfil/Rosa.jpg';
     }
-    echo $imagemPerfil;
-         
-    $sql = "INSERT INTO usuario(nome, email, senha, genero, cpf, dataNasc, telefone,imagemPerfil)
-    VALUES(' ". $nome ." ',' ". $email ." ',' ". crypt($senha,$salt) ." ',' ". $genero ." ',' ". $cpf ."',' ". $dataNasc ." ',' ". $telefone ."',' ". $imagemPerfil ." ')";  
+    $dados=[
+        'nome'=>$nome,
+        'email'=>$email,
+        'senha'=> crypt($senha,$salt),
+        'genero'=>$genero,
+        'dataNasc'=>$dataNasc,
+        'telefone'=>$telefone,
+        'imagemPerfil'=>$imagemPerfil
 
-    $conexao = conecta();
-    $resultado = mysqli_query( $conexao, $sql);
-    
-    desconecta($conexao);
+    ];
+    insere(
+        'usuario',
+        $dados
+    );
     
          break;
      case 'update':
@@ -143,7 +148,7 @@
          exit;
          break;
  }
- header('Location: ../Produtos.php');
+ header('Location: ../index.php');
 
  //http://localhost/blog/core/usuario_repositorio.php
 ?>

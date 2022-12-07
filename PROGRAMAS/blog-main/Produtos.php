@@ -10,15 +10,16 @@ session_start();
         <title>Usuário | Projeto para Web com PHP</title>
         <link rel="stylesheet" href="lib/css/Produtos.php">
         <link rel="stylesheet" href="lib/css/card_Prod.css">
+        <link rel="stylesheet" href="lib/css/category.css">
+        <link rel="stylesheet" href="lib/css/footer.css">
+        <link rel="stylesheet" href="lib/css/header.css">
         <script>
 
 </script>
     </head>
     <body>  
-            <div class="ranking">
-            <div class="tabelas"></div>
-            </div>
-            <div id="main" >
+       
+            <div id="main">
                     <?php
                         require_once 'includes/funcoes.php';
                         require_once 'core/conexao_mysql.php';
@@ -45,21 +46,21 @@ session_start();
                         function postiit(array $entidade): string
                         {
                             if($entidade['modoOperacao']=='Troca'){
-                                $src = 'lib/img/Amarelo.jpg';
+                                $src = 'img/Amarelo.jpg';
                             }
                             if($entidade['modoOperacao']=='Doação'){
-                                $src = 'lib/img/verde.jpg';
+                                $src = 'img/verde.jpg';
                             }
                             return $src;
                         }
                     //https://html-css-js.com/css/generator/box-shadow/
-                      foreach($result as $entidade) : if($entidade['dataValidade']>=$hj):?>
+                      foreach($result as $entidade) : ?>
                 
                     <?php
                         include 'includes/card_Prod.php';
                     ?>
-                    <?php endif; endforeach; ?>
+                    <?php endforeach; ?>
             </div>
-            
+      
     </body>
 </html>

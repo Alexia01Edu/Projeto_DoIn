@@ -18,11 +18,12 @@ body{
     display: inline-block;
 }
 #main{
+    margin-top:110px;
     float:right;
     display: inline-block;
-    background-color: blue;
+    background-color: Lavender;
     width: 75vw;
-    height: 100vh;
+    height: auto;
     padding-left: 10px;
     padding-top: 10px;
     font-size:30px;

@@ -18,6 +18,7 @@ body{
     height: 100%;
 }
 #main{
+    top:115px;
     margin-left: auto;
     margin-right: auto;
     width:80vw;
@@ -50,7 +51,7 @@ body{
 .card{
     padding-top: 1%;
     padding-left: 1%;
-    border: 3px solid black;
+   /* border: 3px solid black;*/
     height: 660px;
     display: flex;
     
@@ -73,7 +74,7 @@ body{
     width:85%;
     height: 600px;
     display: flex;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
     border-radius: 6px;
     align-items: center;
 }
@@ -127,7 +128,7 @@ body{
 #infoProd{
     padding: 3px;
     line-height: 2.0;
-    border: 3px solid black;
+   /* border: 3px solid black;*/
     width: 300px;
     height:80%;
     margin-left: 2%;
@@ -141,10 +142,12 @@ body{
 
 }
 .descricao{
-    border: 3px solid black;
     width: 80vw;
     height: auto;
     padding: 2%;
+    -webkit-box-shadow: 2px -2px 15px 6px rgba(0,0,0,0.16); 
+    box-shadow: 2px -2px 15px 6px rgba(0,0,0,0.16);
+    border-radius: 10px;
 }
 .descricao h1{
     font-size: 23px;
@@ -167,99 +170,4 @@ body{
     width: 400px;
     height: 300px;
     background-color: #fff;
-}
-@media screen and (max-width:980px) {
-    .btn,.labels{
-        display: flex;
-    }
-    body{
-        width: 100%;
-    }
-    #main{
-        width:100%;
-        padding: 0%;
-        margin: 0%;
-    }
-    
-    .p1{
-        height: auto;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        box-shadow: none;
-        padding: 0%;
-        margin: 0%;
-    }
-    #nome{
-        order: 2;
-        margin-bottom:0 ;
-    }
-    .card{
-        padding: 0%;
-        height: auto;
-        width: 100%;
-        order: 1;
-        display: flex;
-        flex-direction: column;
-        border: none;
-    }
-    .imagem{
-        display: none;
-    }
-    .navega{
-        width:100%;
-        height: 500px;
-        margin: 0%;
-        padding: 0%;
-        overflow: hidden;
-        position: relative;
-    }
-    .lista{
-        display: flex;
-        width: 500%;
-        height: 500px;
-    }
-    .envoltorio{
-        background-color: Lavender;
-        display: flex;
-        border-width: 1px;
-        border-color:rgb(0, 134, 255);
-        border-style: solid;
-        border-radius: 6px;
-        width: 20%;
-        height: 100%;
-        position: absolute;
-    }
-    .imagens{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-    .labels{
-        bottom: 20px;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        display: flex;
-    }
-    .barra{
-        border-radius: 5px;
-        width: 70px;
-        height: 24px;
-        border: 2px solid rgb(0, 134, 255);
-        cursor: pointer;
-        transition: .6s;
-    }
-    .barra:hover{
-        background-color: #fff;
-    }
-    input{
-        display: none;
-    }
-    #btn1:checked ~ .s1{
-        margin-left: 0;
-    }
-    #btn2:checked ~ .s1{
-        margin-left: -20%;
-    }
 }

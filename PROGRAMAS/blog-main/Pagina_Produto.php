@@ -8,10 +8,14 @@
         <title>Usuário | Projeto para Web com PHP</title>
         <link rel="stylesheet" href="lib/css/PaginaProd.css">
         <link rel="stylesheet" href="lib/css/card_Prod.css">
+        <link rel="stylesheet" href="lib/css/category.css">
+        <link rel="stylesheet" href="lib/css/footer.css">
+        <link rel="stylesheet" href="lib/css/header.css">
         <script>
         </script>
     </head>
     <body>  
+        <?php include 'includes/header.php'?>
         <?php  
         require_once 'includes/funcoes.php';
         require_once 'core/conexao_mysql.php';
@@ -93,7 +97,7 @@
                     
                         <p>Quantidade:<?php echo $Produto['quant']?></p>
 
-                        <img width="20" height="30" src="lib/img/GPS_Icon.png" alt=""><span><?php echo $Produto['cidade']?>, <?php echo $Produto['estado']?></span><br>
+                        <img width="20" height="30" src="img/GPS_Icon.png" alt=""><span><?php echo $Produto['cidade']?>, <?php echo $Produto['estado']?></span><br>
 
                     <span>Compartilhe este produto:</span>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/Projeto_Doin/PROGRAMAS/blog-main/Pagina_Produto.php" target="_blank">
@@ -108,13 +112,14 @@
         <?php endforeach;?>
         <div class="semelhantes">
              <?php
+             $hj=date('Y/m/d');
                     function postiit(array $entidade): string
                         {
                             if($entidade['modoOperacao']=='Troca'){
-                                $src = 'lib/img/Amarelo.jpg';
+                                $src = 'img/Amarelo.jpg';
                             }
                             if($entidade['modoOperacao']=='Doação'){
-                                $src = 'lib/img/verde.jpg';
+                                $src = 'img/verde.jpg';
                             }
                             return $src;
                         }

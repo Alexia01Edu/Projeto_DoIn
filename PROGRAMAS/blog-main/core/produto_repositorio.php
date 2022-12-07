@@ -47,41 +47,8 @@ switch($acao){
         );
         $idProd=$id[0]['produtoID'];
 
-        echo $idProd.'  ';
-     
-   $criterio=[['usuarioID','=',$usuario]];
-        $resultado = buscar(
-            'usuario',
-            ['quantDoar','quantTrocar'],
-            $criterio
-        );
-        
-        $doa=(int)$resultado[0]['quantDoar'];
-        $troca=(int)$resultado[0]['quantTrocar'];
 
-        if($modo=='Doação'){
-        $quantDoar=$doa+$quantidade;
-        $quantTrocar=$troca;
-        }
-        else{
-        $quantTrocar=$troca+$quantidade;
-        $quantDoar=$doa;
-
-        }
-/*
-        $dados=[
-            'quantDoar'=>$quantDoar,
-            'quantTrocar'=>$quantTrocar
-        ];
-        $criterio=['usuarioID','=',$usuario];
-        atualiza(
-            'usuario',
-            $dados,
-            $criterio
-        );
-
-      /*   function enviarImagem($error, $name, $tmp_name){
-            include 'conexao_mysql.php';
+          function enviarImagem($name, $tmp_name,$idProd){
              
              $pasta = 'ImagensProdutos/';
              $nomeImagem = $name;
@@ -94,7 +61,6 @@ switch($acao){
                  $dados = [
                      'Imagem_arq' => $imagem_arq,
                      'fk_produto'=> $idProd
-                     //'data_postagem' => "$data_postagem $hora_postagem",
                  ];
                  insere(
                      'Imagem',
@@ -112,10 +78,10 @@ switch($acao){
              $imagens = $_FILES['imagens'];
              //array imagens = recebe as imagens
              foreach($imagens['name'] as $index => $img) {
-                 $imagens_arqs  = enviarImagem($imagens['error'][$index], $imagens['name'][$index], $imagens["tmp_name"][$index]);
+                 $imagens_arqs  = enviarImagem( $imagens['name'][$index], $imagens["tmp_name"][$index],$idProd);
              }
          }
-*/
+
          break;
         case 'update':
             //caso seja para atualizar dados existentes

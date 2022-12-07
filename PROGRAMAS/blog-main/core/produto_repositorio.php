@@ -20,37 +20,67 @@ foreach($_GET as $indice => $dado){
 switch($acao){
 
     case 'insert':
-        $quantidade = $quant;
+        $quantidade =(int)$quant;
         $usuario=$_SESSION ['login'] ['usuario'] ['usuarioID'];
         $modo = $modoOperacao;
-        echo $usuario;
-        $sql = "INSERT INTO Produto(nome_prod, descricao, quant, modoOperacao, dataValidade, estado, cidade,fk_categoria, fk_usuario)
-        VALUES(' ". $nome_prod ." ',' ". $descricao ." ',' ". $quant ." ',' ". $modoOperacao ." ',' ". $dataValidade ."',' ". $estado ." ',' ". $cidade ."',' ". $fk_categoria ."',' ". $_SESSION ['login'] ['usuario'] ['usuarioID'] ." ')";  
-        
-        $resultado = mysqli_query($conexao,$sql);
-        $idProd=mysqli_insert_id($conexao);
-        echo $idProd;
+        $dados = [
+            'nome_prod' => $nome_prod,
+            'descricao' => $descricao,
+            'quant' => $quant,
+            'modoOperacao' => $modoOperacao,
+            'dataValidade' => $dataValidade,
+            'estado' => $estado,
+            'cidade' => $cidade,
+            'fk_categoria'=>$fk_categoria,
+            'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuarioID']
+        ];
+        insere(
+            'Produto',
+            $dados
+        );
+       $criterio = [];
+        $id = buscar(
+                'Produto',
+                ['produtoID'],
+                $criterio,
+                'produtoID DESC LIMIT 1'
+        );
+        $idProd=$id[0]['produtoID'];
 
-        $criterio=[['usuarioID','=',$usuario]];
+        echo $idProd.'  ';
+     
+   $criterio=[['usuarioID','=',$usuario]];
         $resultado = buscar(
             'usuario',
             ['quantDoar','quantTrocar'],
             $criterio
         );
+        
+        $doa=(int)$resultado[0]['quantDoar'];
+        $troca=(int)$resultado[0]['quantTrocar'];
+
         if($modo=='Doação'){
-        $quantDoar=$resultado[0]['quantDoar']+$quantidade;
-        $quantTrocar=$resultado[0]['quantTrocar'];
+        $quantDoar=$doa+$quantidade;
+        $quantTrocar=$troca;
         }
         else{
-        $quantTrocar=$resultado[0]['quantTrocar']+$quantidade;
-        $quantDoar=$resultado[0]['quantDoar'];
+        $quantTrocar=$troca+$quantidade;
+        $quantDoar=$doa;
+
         }
-        $sql = "UPDATE usuario(quantDoar,quantTrocar)
-        VALUES(' ". $quantDoar ." ',' ". $quantTrocar ." ') WHERE usuarioID = '.$usuario.'";  
+/*
+        $dados=[
+            'quantDoar'=>$quantDoar,
+            'quantTrocar'=>$quantTrocar
+        ];
+        $criterio=['usuarioID','=',$usuario];
+        atualiza(
+            'usuario',
+            $dados,
+            $criterio
+        );
 
-        $resultado = mysqli_query( $conexao, $sql);
-
-        function enviarImagem($error, $name, $tmp_name){
+      /*   function enviarImagem($error, $name, $tmp_name){
             include 'conexao_mysql.php';
              
              $pasta = 'ImagensProdutos/';
@@ -85,8 +115,8 @@ switch($acao){
                  $imagens_arqs  = enviarImagem($imagens['error'][$index], $imagens['name'][$index], $imagens["tmp_name"][$index]);
              }
          }
-
-
+*/
+         break;
         case 'update':
             //caso seja para atualizar dados existentes
             //função sql.php

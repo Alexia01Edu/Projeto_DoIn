@@ -15,7 +15,9 @@ session_start();
 </script>
     </head>
     <body>  
-            <div class="prop"></div>
+            <div class="ranking">
+            <div class="tabelas"></div>
+            </div>
             <div id="main" >
                     <?php
                         require_once 'includes/funcoes.php';
@@ -26,12 +28,8 @@ session_start();
                         foreach($_GET as $indice => $dado) {
                             $$indice = limparDados($dado);
                         }
-
+                        $hj=date('Y/m/d');
                         $criterio = [];
-
-                        if(!empty($busca)) {
-                            $criterio[] = ['nome', 'like', "%{$busca}%"];
-                        }
                         
 
                         $result = buscar(
@@ -55,14 +53,13 @@ session_start();
                             return $src;
                         }
                     //https://html-css-js.com/css/generator/box-shadow/
-                      foreach($result as $entidade) : ?>
-                
+                      foreach($result as $entidade) : if($entidade['dataValidade']>=$hj):?>
                 
                     <?php
                         include 'includes/card_Prod.php';
                     ?>
-                    <?php endforeach; ?>
-                
+                    <?php endif; endforeach; ?>
             </div>
+            
     </body>
 </html>

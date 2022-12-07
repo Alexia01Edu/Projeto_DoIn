@@ -20,8 +20,10 @@ foreach($_GET as $indice => $dado){
 switch($acao){
 
     case 'insert':
- 
-
+        $quantidade = $quant;
+        $usuario=$_SESSION ['login'] ['usuario'] ['usuarioID'];
+        $modo = $modoOperacao;
+        echo $usuario;
         $sql = "INSERT INTO Produto(nome_prod, descricao, quant, modoOperacao, dataValidade, estado, cidade,fk_categoria, fk_usuario)
         VALUES(' ". $nome_prod ." ',' ". $descricao ." ',' ". $quant ." ',' ". $modoOperacao ." ',' ". $dataValidade ."',' ". $estado ." ',' ". $cidade ."',' ". $fk_categoria ."',' ". $_SESSION ['login'] ['usuario'] ['usuarioID'] ." ')";  
         
@@ -29,6 +31,25 @@ switch($acao){
         $resultado = mysqli_query($conexao,$sql);
         $idProd=mysqli_insert_id($conexao);
         echo $idProd;
+
+        $criterio=[['usuarioID','=',$usuario]];
+        $resultado = buscar(
+            'usuario',
+            ['quantDoar','quantTrocar'],
+            $criterio
+        );
+        if($modo=='Doação'){
+        $quantDoar=$resultado[0]['quantDoar']+$quantidade;
+        $quantTrocar=$resultado[0]['quantTrocar'];
+        }
+        else{
+        $quantTrocar=$resultado[0]['quantTrocar']+$quantidade;
+        $quantDoar=$resultado[0]['quantDoar'];
+        }
+        $sql = "UPDATE usuario(quantDoar,quantTrocar)
+        VALUES(' ". $quantDoar ." ',' ". $quantTrocar ." ') WHERE usuarioID = '.$usuario.'";  
+
+        $resultado = mysqli_query( $conexao, $sql);
 
         function enviarImagem($error, $name, $tmp_name){
             include 'conexao_mysql.php';

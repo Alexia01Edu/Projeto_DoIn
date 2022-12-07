@@ -13,11 +13,16 @@ body{
     align-items: center;
     background: #fff;
 }
+.ranking{
+    position: fixed;
+    height: 100%;
+}
 #main{
     margin-left: auto;
     margin-right: auto;
     width:80vw;
     height: auto;
+    position: relative;
 }
 .p1{
     padding-top: 5px;
@@ -156,7 +161,13 @@ body{
     padding: 3px;
     position: relative;   
 }
-
+.tabelas{
+    position: absolute;
+    margin: 0 auto;
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+}
 @media screen and (max-width:980px) {
     .btn,.labels{
         display: flex;

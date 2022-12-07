@@ -12,7 +12,8 @@
                 <div>
                 <p>Unidades: <?php echo $entidade['quant']?></p>
                 <p class="lugar"><?php echo $entidade['cidade']?>, <?php echo $entidade['estado']?></p>
-                <span class="data">Data de validade: <?php echo $entidade['dataValidade']?></span>
+                <span class="data" <?php if($entidade['dataValidade']==$hj){echo'style="color:red;"';}?>>
+                Data de validade: <?php echo $entidade['dataValidade']?></span>
                 </div>
             </div>
         </a>
